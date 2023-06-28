@@ -61,7 +61,7 @@ def main(prompt=False):
 
 
 user_name = input('Hi, tell me your name pls!: ').capitalize()
-print(f'Hello, {user_name}!', end=' ')
+print(f'Hello, {user_name}!What are you doing?', end=' ')
 
 if __name__ == '__main__':
     if main():
