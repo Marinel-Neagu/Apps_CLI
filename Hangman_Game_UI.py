@@ -9,16 +9,28 @@ def hello():
     print(f'Hello {name}')
 
 
+def life(lives):
+    lives = 6
+    if lives <= 0:
+        print('You lost the game!')
+    else:
+        hangman()
+
+
+def new_game():
+    pass
+
+
 # The game where all the action happens
 def hangman():
-    x=0
-    lives = 6
+    x = 0
     word = RandomWord()
     word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])
     word_stage = ' _' * len(word_random)
     print(word_stage)
 
-    while lives > 0:
+    while True:
+
         letter_player = input('Choose a letter: ').strip().lower()
 
         if letter_player not in string.ascii_letters:
@@ -39,12 +51,8 @@ def hangman():
         if found:
             print(word_stage)
         else:
-            lives -= 1
-            x+=1
-            print(HANGMANPICS[x])
             print(word_stage)
             print('Wrong letter! Try again.')
-            print('Lives left:', lives)
 
         if '_' not in word_stage:
             print('Congratulations! You guessed the word:', word_random)
@@ -69,5 +77,7 @@ def main():
 
 
 if __name__ == '__main__':
+
     hello()
+
     main()
