@@ -81,3 +81,7 @@ if __name__ == '__main__':
         ''')
     hello()
     main()
+    play_again = input('Do you want to play again?').strip().lower()
+    if play_again == 'yes' or play_again == 'y':
+        hangman()
+
