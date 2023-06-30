@@ -66,7 +66,7 @@ def main():
     if choice == 'y' or choice == 'yes':
         hangman()
     elif choice == 'n' or choice == 'no':
-        print('Goodbye!')
+        print('Goodbye! Cya!')
     else:
         choice = input('Just type yes or no, man!')
 
