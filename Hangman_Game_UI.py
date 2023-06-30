@@ -1,6 +1,7 @@
-from Hangman_pic import *
+
 import string
 from wonderwords import *
+import Hangman_pic
 
 
 # Just say hello to the user
@@ -11,7 +12,7 @@ def hello():
 
 # The game where all the action happens
 def hangman():
-    x=0
+    x = 0
     lives = 6
     word = RandomWord()
     word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])
@@ -40,7 +41,7 @@ def hangman():
             print(word_stage)
         else:
             lives -= 1
-            x+=1
+            x += 1
             print(HANGMANPICS[x])
             print(word_stage)
             print('Wrong letter! Try again.')
@@ -69,5 +70,15 @@ def main():
 
 
 if __name__ == '__main__':
+
+    print(f''' 
+         __    __       ___      .__   __.   _______ .___  ___.      ___      .__   __. 
+        |  |  |  |     /   \     |  \ |  |  /  _____||   \/   |     /   \     |  \ |  | 
+        |  |__|  |    /  ^  \    |   \|  | |  |  __  |  \  /  |    /  ^  \    |   \|  | 
+        |   __   |   /  /_\  \   |  . `  | |  | |_ | |  |\/|  |   /  /_\  \   |  . `  | 
+        |  |  |  |  /  _____  \  |  |\   | |  |__| | |  |  |  |  /  _____  \  |  |\   | 
+        |__|  |__| /__/     \__\ |__| \__|  \______| |__|  |__| /__/     \__\ |__| \__|
+        ''')
     hello()
     main()
+
