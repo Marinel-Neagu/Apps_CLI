@@ -9,32 +9,16 @@ def hello():
     print(f'Hello {name}!: ')
 
 
- def life(): # counting for lives and implementing them
-    lives = 6
-    while lives > 0:
-        hangman()
-    else:
-        print('You lost the game!')
-    return lives
-
-
-def new_game():
-    play_again = input('Do you want to play again!').strip().lower()
-    if play_again == 'y' or play_again == 'yes':
-        life()
-    elif play_again == 'n' or play_again == 'no':
-        print('Goodbye!')
-
-
 # The game where all the action happens
 def hangman():
-    x = 0
+    x=0
+    lives = 6
     word = RandomWord()
     word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])
     word_stage = ' _' * len(word_random)
     print(word_stage)
 
-    while True:
+    while lives > 0:
         letter_player = input('Choose a letter: ').strip().lower()
 
         if letter_player not in string.ascii_letters:
@@ -50,19 +34,23 @@ def hangman():
             if letter_player == word_random[i]:
                 word_stage = word_stage[:i] + letter_player + word_stage[i + 1:]
                 found = True
+                print(HANGMANPICS[x])
 
         if found:
             print(word_stage)
         else:
+            lives -= 1
+            x+=1
+            print(HANGMANPICS[x])
             print(word_stage)
             print('Wrong letter! Try again.')
-            print('Life')
-            print(HANGMANPICS[x])
+            print('Lives left:', lives)
 
         if '_' not in word_stage:
             print('Congratulations! You guessed the word:', word_random)
             break
-        return True
+    else:
+        print('You lost the game :(')
 
 
 # The main function
@@ -73,7 +61,7 @@ def main():
         choice = input('Please just type y/n: ').strip().lower()
 
     if choice == 'y' or choice == 'yes':
-
+        hangman()
     elif choice == 'n' or choice == 'no':
         print('Goodbye!')
     else:
@@ -82,5 +70,4 @@ def main():
 
 if __name__ == '__main__':
     hello()
-
     main()
