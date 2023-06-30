@@ -12,7 +12,6 @@ def hello():
 # The game where all the action happens
 def hangman():
     guessed = []
-
     lives = 0
     word = RandomWord()
     word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])  # random words
@@ -29,22 +28,22 @@ def hangman():
             continue
 
         if letter_player in word_stage:
-            print('You have already guessed that letter. Just type again!')
+            print('You have already guessed that letter. Just type again!',end=' ')
             guessed.append(letter_player)
             print('Letter guessed by you:', ' '.join(guessed).capitalize())
             print(word_stage)
-            found = False
             continue
 
+        found = False
         for i in range(len(word_random)):
             if letter_player == word_random[i]:
                 word_stage = word_stage[:i] + letter_player + word_stage[i + 1:]
-        found = True
-        print(HANGMANPICS[lives])
+                found = True
 
         if found:
             print(word_stage)
-        if not found:
+            print('Letter guessed by you:', ' '.join(guessed).capitalize())
+        else:
             lives += 1
             print(HANGMANPICS[lives])
             print(word_stage)
@@ -84,4 +83,4 @@ if __name__ == '__main__':
         elif play_again == 'no' or play_again == 'n':
             print('Goodbye, man!')
             break
-    # hangman()
+
