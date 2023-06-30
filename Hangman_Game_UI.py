@@ -33,9 +33,8 @@ def hangman():
             guessed.append(letter_player)
             print('Letter guessed by you:', ' '.join(guessed).capitalize())
             print(word_stage)
+            found = False
             continue
-
-        found = False
 
         for i in range(len(word_random)):
             if letter_player == word_random[i]:
@@ -45,8 +44,7 @@ def hangman():
 
         if found:
             print(word_stage)
-        else:
-
+        if not found:
             lives += 1
             print(HANGMANPICS[lives])
             print(word_stage)
