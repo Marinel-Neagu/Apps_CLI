@@ -1,5 +1,5 @@
 
-HANGMANPICS = ['''
+HANGMANPICS = ['',''' 
   +---+
   |   |
       |
