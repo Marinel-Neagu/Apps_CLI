@@ -11,10 +11,11 @@ def hello():
 
 # The game where all the action happens
 def hangman():
-    x = -1
+    level = 0
     lives = 6
     word = RandomWord()
-    word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])
+    word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])  # random words
+    # specification
     word_stage = ' _' * len(word_random)
     print(word_stage)
 
@@ -34,14 +35,14 @@ def hangman():
             if letter_player == word_random[i]:
                 word_stage = word_stage[:i] + letter_player + word_stage[i + 1:]
                 found = True
-                print(HANGMANPICS[x])
+                print(HANGMANPICS[level])
 
         if found:
             print(word_stage)
         else:
             lives -= 1
-            x += 1
-            print(HANGMANPICS[x])
+            level += 1
+            print(HANGMANPICS[level])
             print(word_stage)
             print('Wrong letter! Try again.')
             print('Lives left:', lives)
@@ -61,7 +62,7 @@ def main():
         choice = input('Please just type y/n: ').strip().lower()
 
     if choice == 'y' or choice == 'yes':
-        print(HANGMANPICS[1])
+        print(HANGMANPICS[0])
         hangman()
     elif choice == 'n' or choice == 'no':
         print('Goodbye!')
@@ -74,8 +75,10 @@ if __name__ == '__main__':
     print(TITLE)
     hello()
     main()
-    play_again = input('Do you want to play again?').strip().lower()
-    if play_again == 'yes' or play_again == 'y':
-        hangman()
-
-
+    while True:
+        play_again = input('Do you want to play again? Pres yes or no!: ').strip().lower()
+        if play_again == 'yes' or play_again == 'y':
+            hangman()
+        elif play_again == 'no' or play_again == 'n':
+            print('Goodbye, man!')
+            break
