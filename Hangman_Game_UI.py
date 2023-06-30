@@ -1,6 +1,6 @@
 import string
 from wonderwords import *
-from Hangman_pic import HANGMANPICS
+from Hangman_pic import HANGMANPICS, TITLE
 
 
 # Just say hello to the user
@@ -11,7 +11,7 @@ def hello():
 
 # The game where all the action happens
 def hangman():
-    x = 1
+    x = -1
     lives = 6
     word = RandomWord()
     word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])
@@ -71,17 +71,11 @@ def main():
 
 if __name__ == '__main__':
     # Display game title
-    print(f''' 
-         __    __       ___      .__   __.   _______ .___  ___.      ___      .__   __. 
-        |  |  |  |     /   \     |  \ |  |  /  _____||   \/   |     /   \     |  \ |  | 
-        |  |__|  |    /  ^  \    |   \|  | |  |  __  |  \  /  |    /  ^  \    |   \|  | 
-        |   __   |   /  /_\  \   |  . `  | |  | |_ | |  |\/|  |   /  /_\  \   |  . `  | 
-        |  |  |  |  /  _____  \  |  |\   | |  |__| | |  |  |  |  /  _____  \  |  |\   | 
-        |__|  |__| /__/     \__\ |__| \__|  \______| |__|  |__| /__/     \__\ |__| \__|
-        ''')
+    print(TITLE)
     hello()
     main()
     play_again = input('Do you want to play again?').strip().lower()
     if play_again == 'yes' or play_again == 'y':
         hangman()
+
 
