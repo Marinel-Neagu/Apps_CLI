@@ -61,6 +61,7 @@ def main():
         choice = input('Please just type y/n: ').strip().lower()
 
     if choice == 'y' or choice == 'yes':
+        print(HANGMANPICS[1])
         hangman()
     elif choice == 'n' or choice == 'no':
         print('Goodbye!')
@@ -69,6 +70,7 @@ def main():
 
 
 if __name__ == '__main__':
+    # Display game title
     print(f''' 
          __    __       ___      .__   __.   _______ .___  ___.      ___      .__   __. 
         |  |  |  |     /   \     |  \ |  |  /  _____||   \/   |     /   \     |  \ |  | 

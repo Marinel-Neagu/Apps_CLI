@@ -1,5 +1,4 @@
-
-HANGMANPICS = ['',''' 
+HANGMANPICS = ['', ''' 
   +---+
   |   |
       |
@@ -49,6 +48,5 @@ HANGMANPICS = ['','''
  / \  |
       |
 =========''']
-
 
 print(HANGMANPICS[0])
