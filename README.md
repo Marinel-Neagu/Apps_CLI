@@ -1,10 +1,6 @@
-- 👋 Hi, I’m @Vast-Emptiness
-- 👀 I’m interested in programing, i am a newbie :)
+- 👋 Hi, I’m @Marinel-Neagu
+- 👀 I’m interested in programing and i am a newbie :)
 - 🌱 I’m currently learning Python
-- 💞️ I’m looking to collaborate on everything
-- 📫 How to reach me...
+- 💞️ I’m looking to collaborate my programing skills
+- 📫 How to reach me...just look in bio
 
-<!---
-Vast-Emptiness/Vast-Emptiness is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
