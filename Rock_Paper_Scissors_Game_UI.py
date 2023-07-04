@@ -76,7 +76,7 @@ def game():
 
 while True:
     try:
-        total = int(input('How many round do you want to play!: '))
+        total = int(input('How many rounds do you want to play!: '))
         game()
         play_again = input('Do you want to play again! [y/n]:').lower()
         if play_again == 'y':

@@ -14,7 +14,7 @@ digits = input('Do you want to add digits?: ').strip().lower()
 punctuations = input('Do you want to add punctuation?:').strip().lower()
 x = ''
 
-if letters_upper == 'y' or letters_uppere == ' yes':
+if letters_upper == 'y' or letters_upper == ' yes':
     x += string.ascii_lowercase
 
 if punctuations == 'y' or punctuations == ' yes':

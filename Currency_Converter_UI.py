@@ -1,7 +1,7 @@
 currency = {
     'USD': 1,
     'EUR': 0.89,
-    'RON': 4.53,
+    'RON': 4.54,
     'GPD': 3.2
 
 }
@@ -56,7 +56,7 @@ while True:
 
     if start_currency in currency and end_currency in currency:
         conversion = float(amount * currency[end_currency] / currency[start_currency])
-    print(f'The  conversion is {round(conversion, 2)} {start_currency}')
+    print(f'The  conversion is {round(conversion, 2)} {end_currency}')
     new_conversion = input('Do you want to convert again? Press q to quit and enter to continue:')
     if new_conversion == 'q':
         print('Goodbye!')

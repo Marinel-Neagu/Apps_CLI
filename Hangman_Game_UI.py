@@ -16,11 +16,10 @@ def hangman():
     word = RandomWord()
     word_random = word.word(word_max_length=10, word_min_length=3, include_categories=['nouns'])  # random words
     # specification
-    print(word_random)
     word_stage = ' _' * len(word_random)
     print(word_stage)
 
-    while 0 <= lives < 6:
+    while 0 <= lives < 7:
         letter_player = input('Choose a letter: ').strip().lower()
 
         if letter_player not in string.ascii_letters:
@@ -53,6 +52,7 @@ def hangman():
             print('Congratulations! You guessed the word:', word_random)
             break
     else:
+        print('The word was:', word_random)
         print('You lost the game :(!')
 
 
@@ -77,6 +77,7 @@ if __name__ == '__main__':
     hello()
     main()
     while True:
+
         play_again = input('Do you want to play again? Pres yes or no!: ').strip().lower()
         if play_again == 'yes' or play_again == 'y':
             hangman()
