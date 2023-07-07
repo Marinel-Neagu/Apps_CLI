@@ -1,3 +1,7 @@
+
+
+# the dictionary  with currency
+
 currency = {
     'USD': 1,
     'EUR': 0.89,
@@ -14,9 +18,9 @@ def first_currency():
             if currency1 in currency:
                 break
             else:
-                print('Invalid choice!')
+                print('The currency is not found in the tabel, try one from the table!')
         else:
-            print('Invalid choice!')
+            print('Invalid choice! You have to choose from the table!')
     return currency1
 
 
@@ -27,9 +31,9 @@ def second_currency():
             if currency2 in currency:
                 break
             else:
-                print('Invalid choice!')
+                print('The currency is not found in the tabel, try one from the table!')
         else:
-            print('Invalid choice!')
+            print('The currency is not found in the tabel, try one from the table!')
     return currency2
 
 
