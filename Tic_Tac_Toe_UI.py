@@ -51,13 +51,13 @@ def hello():
 
 def game_board():
     board_matrix = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
-    print(f'''
-              |   | 
-           ___|___|___
-              |   | 
-           ___|___|___       
-              |   |
-        ''')
+    # print(f'''
+    #           |   |
+    #        ___|___|___
+    #           |   |
+    #        ___|___|___
+    #           |   |
+    #     ''')
     while True:
 
         board = (f'''
@@ -71,12 +71,44 @@ def game_board():
         row = row_user()
         column = column_user()
         symbol = symbol_user()
-        if board_matrix[row][column] !=' ':
+        if board_matrix[row][column] != ' ':
             print('Please choose another place!')
         else:
             board_matrix[row][column] = symbol
+            print(board)
 
-        if board_matrix[0]
+        if board_matrix[0][0] == board_matrix[0][1] == board_matrix[0][2]==symbol:
+            print(board_matrix[0][0], ' Won')
+            print(board)
+            break
+        elif board_matrix[1][0] == board_matrix[1][1] == board_matrix[1][2] == symbol:
+            print(board_matrix[1][0], ' Won')
+            print(board)
+            break
+        elif board_matrix[2][0] == board_matrix[2][1] == board_matrix[2][2] == symbol:
+            print(board_matrix[2][0], ' Won')
+            print(board)
+            break
+        elif board_matrix[0][0] == board_matrix[1][0] == board_matrix[2][0] == symbol:
+            print(board_matrix[0][0], ' Won')
+            print(board)
+            break
+        elif board_matrix[0][1] == board_matrix[1][1] == board_matrix[2][1] == symbol:
+            print(board_matrix[0][1], ' Won')
+            print(board)
+            break
+        elif board_matrix[0][2] == board_matrix[1][2] == board_matrix[2][2] == symbol:
+            print(board_matrix[0][2], ' Won')
+            print(board)
+            break
+        elif board_matrix[0][0] == board_matrix[1][1] == board_matrix[2][2] == symbol:
+            print(board_matrix[0][0], ' Won')
+            print(board)
+            break
+        elif board_matrix[0][2] == board_matrix[1][1] == board_matrix[2][0] == symbol:
+            print(board_matrix[0][2], ' Won')
+            print(board)
+            break
 
 
 def game():
