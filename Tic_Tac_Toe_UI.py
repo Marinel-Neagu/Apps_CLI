@@ -1,3 +1,6 @@
+import random
+
+
 def hello():
     while True:
         name = input('Hello, what is your name: ').capitalize().strip()
@@ -10,20 +13,27 @@ def hello():
     return choice in ['y', 'yes']
 
 
-def board(i):
-   print(f''' 
-      {i[1]}|{i[2]}|{i[3]}
-        ____|______|____
-     {i[4]} |{i[5]}|{i[6]}
-        ____|______|____
-      {i[7]}|{i[8]}|{i[9]}
-            |      | 
-''')
+def game_board():
+    board_matrix = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+    while True:
+        board = f'''
+                {board_matrix[0][0]} | {board_matrix[0][1]} | {board_matrix[0][2]}
+               ___|___|___
+                {board_matrix[1][0]} | {board_matrix[1][1]} | {board_matrix[1][2]}
+               ___|___|___       
+                {board_matrix[2][0]} | {board_matrix[2][1]} | {board_matrix[2][2]}
+            '''
+        print(board)
+
+        row = int(input('Row'))
+        column = int(input('Column'))
+        symbol = input('Symbol')
+        board_matrix[row][column] = symbol
 
 
 
 def game():
-    player1 = input('')
+    pass
 
 
 def main():
@@ -34,4 +44,4 @@ def main():
 
 
 if __name__ == '__main__':
-    board(input(''))
+    game_board()
