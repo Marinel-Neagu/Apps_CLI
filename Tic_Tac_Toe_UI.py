@@ -1,126 +1,77 @@
 import random
 
 
-def row_user():
+def title():
+    print(f'''
+.___________. __    ______    .___________.    ___       ______    .___________.  ______    _______ 
+|           ||  |  /      |   |           |   /   \     /      |   |           | /  __  \  |   ____|
+`---|  |----`|  | |  ,----'   `---|  |----`  /  ^  \   |  ,----'   `---|  |----`|  |  |  | |  |__   
+    |  |     |  | |  |            |  |      /  /_\  \  |  |            |  |     |  |  |  | |   __|  
+    |  |     |  | |  `----.       |  |     /  _____  \ |  `----.       |  |     |  `--'  | |  |____ 
+    |__|     |__|  \______|       |__|    /__/     \__\ \______|       |__|      \______/  |_______| 
+''')
+
+
+def greetings():
+    name = None
+    print('Hello, how are you? I want to tell you thank you for playing with me, so lets start.')
+    while not name:
+        name = input('What is your name?: ').capitalize().strip()
+
+    print(f'Alright {name},do you want to play Tic Tac Toe? If yes just press y  or to quit just press q.')
     while True:
-        try:
-            row = int(input('Please choose a row: ').strip())
-            if 0 <= row <= 2:
-                return row
-            else:
-                print('Please just chose a row from 0-2!')
-        except ValueError:
-            print('Invalid choice! Please try again!')
+        start = input('Press here...').lower().strip()
+        if start == 'y' or start == 'yes':
+            start_game = True
+            break
+        if start == 'q' or start == 'quit' or start == 'n' or start == 'no':
+            start_game = False
+            break
 
-
-def column_user():
-    while True:
-        try:
-            column = int(input('Please choose a column: ').strip())
-            if 0 <= column <= 2:
-                return column
-            else:
-                print('Please just chose a column from 0-2!')
-        except ValueError:
-            print('Invalid choice! Please try again!')
-
-
-def symbol_user():
-    while True:
-        try:
-            symbol = input('Please choose a symbol(X or O):').capitalize().strip()
-            if symbol in ['X', 'O']:
-                return symbol
-            else:
-                print('Please just chose a symbol(X or O)!: ')
-        except ValueError:
-            print('Invalid choice! Please try again!')
-
-
-def hello():
-    while True:
-        name = input('Hello, what is your name: ').capitalize().strip()
-        if name.isdigit() or name == '':
-            print('Please choose a valid name!')
         else:
-            print(f'Hello {name}! Do you want to play a Tic Tac Toe match?')
-            choice = input('Just press y to play and q to quit...').lower()
-            break
-    return choice in ['y', 'yes']
+            print('Invalid choices, please try again!')
+    return start_game
 
 
-def game_board():
-    board_matrix = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
-    # print(f'''
-    #           |   |
-    #        ___|___|___
-    #           |   |
-    #        ___|___|___
-    #           |   |
-    #     ''')
-    while True:
+def board():
+    board_matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    board = (f'''
+                {board_matrix[0][0]} | {board_matrix[0][1]} | {board_matrix[0][2]}
+               ___|______
+                {board_matrix[1][0]} | {board_matrix[1][1]} | {board_matrix[1][2]}
+               ___|___|___       
+                {board_matrix[2][0]} | {board_matrix[2][1]} | {board_matrix[2][2]}
+            ''')
 
-        board = (f'''
-            {board_matrix[0][0]} | {board_matrix[0][1]} | {board_matrix[0][2]}
-           ___|___|___
-            {board_matrix[1][0]} | {board_matrix[1][1]} | {board_matrix[1][2]}
-           ___|___|___       
-            {board_matrix[2][0]} | {board_matrix[2][1]} | {board_matrix[2][2]}
-        ''')
-        print(board)
-        row = row_user()
-        column = column_user()
-        symbol = symbol_user()
-        if board_matrix[row][column] != ' ':
-            print('Please choose another place!')
-        else:
-            board_matrix[row][column] = symbol
-            print(board)
 
-        if board_matrix[0][0] == board_matrix[0][1] == board_matrix[0][2]==symbol:
-            print(board_matrix[0][0], ' Won')
-            print(board)
-            break
-        elif board_matrix[1][0] == board_matrix[1][1] == board_matrix[1][2] == symbol:
-            print(board_matrix[1][0], ' Won')
-            print(board)
-            break
-        elif board_matrix[2][0] == board_matrix[2][1] == board_matrix[2][2] == symbol:
-            print(board_matrix[2][0], ' Won')
-            print(board)
-            break
-        elif board_matrix[0][0] == board_matrix[1][0] == board_matrix[2][0] == symbol:
-            print(board_matrix[0][0], ' Won')
-            print(board)
-            break
-        elif board_matrix[0][1] == board_matrix[1][1] == board_matrix[2][1] == symbol:
-            print(board_matrix[0][1], ' Won')
-            print(board)
-            break
-        elif board_matrix[0][2] == board_matrix[1][2] == board_matrix[2][2] == symbol:
-            print(board_matrix[0][2], ' Won')
-            print(board)
-            break
-        elif board_matrix[0][0] == board_matrix[1][1] == board_matrix[2][2] == symbol:
-            print(board_matrix[0][0], ' Won')
-            print(board)
-            break
-        elif board_matrix[0][2] == board_matrix[1][1] == board_matrix[2][0] == symbol:
-            print(board_matrix[0][2], ' Won')
-            print(board)
-            break
+
+def print_board():
+    pass
+
+
+def player_choice():
+    pass
+
+
+def computer_choice():
+    pass
+
+
+def game_mode():
+    pass
 
 
 def game():
     pass
 
 
+def new_game():
+    pass
+
+
 def main():
-    if hello():
-        game()
-    else:
-        print('Goodbye, see you later!')
+    pass
 
 
 if __name__ == '__main__':
-    game_board()
+    board()
