@@ -34,23 +34,45 @@ def greetings():
 
 
 def board():
+
     board_matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    board = (f'''
+    board_scheme = (f'''
                 {board_matrix[0][0]} | {board_matrix[0][1]} | {board_matrix[0][2]}
-               ___|______
+               ___|___|___
                 {board_matrix[1][0]} | {board_matrix[1][1]} | {board_matrix[1][2]}
                ___|___|___       
                 {board_matrix[2][0]} | {board_matrix[2][1]} | {board_matrix[2][2]}
             ''')
+    print(board_scheme)
+    return board_matrix
 
 
+def print_board(matrix):
+    print (f'''
+            {matrix[0][0]} | {matrix[0][1]} | {matrix[0][2]}
+           ___|___|___
+            {matrix[1][0]} | {matrix[1][1]} | {matrix[1][2]}
+           ___|___|___       
+            {matrix[2][0]} | {matrix[2][1]} | {matrix[2][2]}
+        ''')
 
-def print_board():
-    pass
+
 
 
 def player_choice():
-    pass
+    board_ = board()
+
+    player_move = int(input('Chose a number from 1 to 9: ').strip())
+    if player_move == 1:
+        board_[0][0]='X'
+    elif player_move == 2:
+        board_[0][1] = 'X'
+    elif player_move == 3:
+        board_[0][2] = 'X'
+    print(board_)
+    print_board(board_)
+
+
 
 
 def computer_choice():
@@ -74,4 +96,4 @@ def main():
 
 
 if __name__ == '__main__':
-    board()
+    player_choice()
