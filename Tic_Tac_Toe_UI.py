@@ -107,7 +107,8 @@ def game():
             elif player_move == 9:
                 board_[2][2] = 'X'
             invalid_moves.append(player_move)
-            computer_move = computer_choice(invalid_moves)
+            computer_move = computer_choice(board_.remove(player_move))
+            invalid_moves.append( )
             print(computer_move)
             if computer_move == 1:
                 board_[0][0] = 'O'
