@@ -75,73 +75,71 @@ def player_choice():
     return player
 
 
-def computer_choice(x):
-    computer = random.choice(range(1, 10, 1))
-    if computer not in x:
-        return computer
+def computer_choice(list):
+    cpu = random.choice(list)
+    return cpu
 
 
 def game():
-    board_ = board()
-    invalid_moves = list()
+    matrix = board()
+    valid_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     while True:
         player_move = player_choice()
-
-        if player_move not in invalid_moves:
+        if player_move in valid_moves:
             if player_move == 1:
-                board_[0][0] = 'X'
+                matrix[0][0] = 'X'
             elif player_move == 2:
-                board_[0][1] = 'X'
+                matrix[0][1] = 'X'
             elif player_move == 3:
-                board_[0][2] = 'X'
+                matrix[0][2] = 'X'
             elif player_move == 4:
-                board_[1][0] = 'X'
+                matrix[1][0] = 'X'
             elif player_move == 5:
-                board_[1][1] = 'X'
+                matrix[1][1] = 'X'
             elif player_move == 6:
-                board_[1][2] = 'X'
+                matrix[1][2] = 'X'
             elif player_move == 7:
-                board_[2][0] = 'X'
+                matrix[2][0] = 'X'
             elif player_move == 8:
-                board_[2][1] = 'X'
+                matrix[2][1] = 'X'
             elif player_move == 9:
-                board_[2][2] = 'X'
-            invalid_moves.append(player_move)
-            computer_move = computer_choice(board_.remove(player_move))
-            invalid_moves.append( )
-            print(computer_move)
-            if computer_move == 1:
-                board_[0][0] = 'O'
-                print(board_)
-            elif computer_move == 2:
-                board_[0][1] = 'O'
-                print(board_)
-            elif computer_move == 3:
-                board_[0][2] = 'O'
-                print(board_)
-            elif computer_move == 4:
-                board_[1][0] = 'O'
-                print(board_)
-            elif computer_move == 5:
-                board_[1][1] = 'O'
-                print(board_)
-            elif computer_move == 6:
-                board_[1][2] = 'O'
-                print(board_)
-            elif computer_move == 7:
-                board_[2][0] = 'O'
-                print(board_)
-            elif computer_move == 8:
-                board_[2][1] = 'O'
-                print(board_)
-            elif computer_move == 9:
-                board_[2][2] = 'O'
-                print(board_)
-            print_board(board_)
+                matrix[2][2] = 'X'
+            valid_moves.remove(player_move)
+
+            if len(valid_moves) > 0:
+                computer_move = computer_choice(valid_moves)
+                if computer_move == 1:
+                    matrix[0][0] = 'O'
+
+                elif computer_move == 2:
+                    matrix[0][1] = 'O'
+
+                elif computer_move == 3:
+                    matrix[0][2] = 'O'
+
+                elif computer_move == 4:
+                    matrix[1][0] = 'O'
+
+                elif computer_move == 5:
+                    matrix[1][1] = 'O'
+                elif computer_move == 6:
+                    matrix[1][2] = 'O'
+                elif computer_move == 7:
+                    matrix[2][0] = 'O'
+
+                elif computer_move == 8:
+                    matrix[2][1] = 'O'
+
+                elif computer_move == 9:
+                    matrix[2][2] = 'O'
+
+                print_board(matrix)
+                valid_moves.remove(computer_move)
+            else:
+                print_board(matrix)
         else:
             print('Invalid move! Try again')
-            print_board(board_)
-
+            print_board(matrix)
 
 
 
@@ -150,7 +148,8 @@ def valid_move():
 
 
 def checking_win(matrix):
-    pass
+    if matrix[0][0] == matrix[0][1] == matrix[0][2] == "X":
+        print("X won")
 
 
 def new_game():
@@ -163,3 +162,5 @@ def main():
 
 if __name__ == '__main__':
     game()
+    checking_win(game())
+
