@@ -1,67 +1,18 @@
-
-
-# the dictionary  with currency
-
 currency = {
     'USD': 1,
-    'EUR': 0.89,
+    'EUR': 0.92,
     'RON': 4.54,
-    'GPD': 3.2
-
+    'GBP': 0.79
 }
-
-
-def first_currency():
-    while True:
-        currency1 = input('What currency do you want to start with: ').strip().upper()
-        if currency1.isascii():
-            if currency1 in currency:
-                break
-            else:
-                print('The currency is not found in the tabel, try one from the table!')
-        else:
-            print('Invalid choice! You have to choose from the table!')
-    return currency1
-
-
-def second_currency():
-    while True:
-        currency2 = input('What currency do you want to finish with: ').strip().upper()
-        if currency2.isascii():
-            if currency2 in currency:
-                break
-            else:
-                print('The currency is not found in the tabel, try one from the table!')
-        else:
-            print('The currency is not found in the tabel, try one from the table!')
-    return currency2
-
-
-def money():
-    while True:
-        money_user = input('Please insert how much money do you want to convert:').strip()
-        if money_user.isdigit():
-            money = int(money_user)
-            break
-        else:
-            print('Invalid choice!')
-    return money
-
-
-print('Here are the conversion rate')
 for key, value in currency.items():
     print(key, ':', value)
+print('Hi, please tell me how many money do you want to convert!')
+money = int(input('Please press here the sum:').strip())
+start_currency = input('Please chose the currency do you have:').strip().capitalize()
+end_currency = input('Please chose the currency do you to tranform:').strip().capitalize()
 
-while True:
+if start_currency in currency and end_currency in currency:
+    for key, value in currency:
+        conversion = (start_currency[value] * money)*end_currency[valueL]
 
-    amount = money()
-    start_currency = first_currency()
-    end_currency = second_currency()
-
-    if start_currency in currency and end_currency in currency:
-        conversion = float(amount * currency[end_currency] / currency[start_currency])
-    print(f'The  conversion is {round(conversion, 2)} {end_currency}')
-    new_conversion = input('Do you want to convert again? Press q to quit and enter to continue:')
-    if new_conversion == 'q':
-        print('Goodbye!')
-        break
+        print('Here is your value:',conversion)
