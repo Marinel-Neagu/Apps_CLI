@@ -81,6 +81,7 @@ def computer_choice(list):
 
 
 def game():
+
     matrix = board()
     valid_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     while True:
@@ -137,20 +138,52 @@ def game():
                 valid_moves.remove(computer_move)
             else:
                 print_board(matrix)
+                return matrix
         else:
             print('Invalid move! Try again')
             print_board(matrix)
-
 
 
 def valid_move():
     pass
 
 
-def checking_win(matrix):
-    if matrix[0][0] == matrix[0][1] == matrix[0][2] == "X":
+def checking_win(matrix_win):
+    game_on = True
+    if matrix_win[0][0] == matrix_win[0][1] == matrix_win[0][2] == "X":
+        print("O won")
+        game_on = False
+    elif matrix_win[1][0] == matrix_win[1][1] == matrix_win[1][2] == "X":
+        print("O won")
+        game_on = False
+    elif matrix_win[2][0] == matrix_win[2][1] == matrix_win[1][2] == "X":
+        print("O won")
+        game_on = False
+    elif matrix_win[0][0] == matrix_win[0][1] == matrix_win[0][2] == "O":
+        print("O won")
+        game_on = False
+    elif matrix_win[1][0] == matrix_win[1][1] == matrix_win[1][2] == "O":
+        print("O won")
+        game_on = False
+    elif matrix_win[2][0] == matrix_win[2][1] == matrix_win[1][2] == "O":
+        print("O won")
+        game_on = False
+    elif matrix_win[0][0] == matrix_win[1][1] == matrix_win[2][2] == "X":
         print("X won")
+        game_on = False
+    elif matrix_win[2][0] == matrix_win[1][1] == matrix_win[0][2] == "X":
+        print("X won")
+        game_on = False
+    elif matrix_win[0][0] == matrix_win[1][1] == matrix_win[2][2] == "O":
+        print("O won")
+        game_on = False
+    elif matrix_win[2][0] == matrix_win[1][1] == matrix_win[0][2] == "O":
+        print("O won")
+        game_on = False
+    else:
+        print("It's a tie")
 
+    return game_on
 
 def new_game():
     pass
@@ -161,6 +194,4 @@ def main():
 
 
 if __name__ == '__main__':
-    game()
     checking_win(game())
-
