@@ -62,13 +62,20 @@ def print_board(matrix):
         ''')
 
 
-def first_player():
-    while True:
+def first_name():
+    name = None
+    while not name:
+        name = input('Tell me the name for the first player: ')
+    return name
 
-        player = input('Player_1(Choose a number from 1-9):').strip()
+
+
+def first_player(list):
+    while True:
+        player = input(f'{first_name()} :').strip()
         if player.isdigit():
             player = int(player)
-            if player in range(1, 10, 1):
+            if player in list:
                 break
             else:
                 print('Invalid number, please choose a number form 0 to 9! ')
@@ -77,10 +84,16 @@ def first_player():
     return player
 
 
+def second_name():
+    name = None
+    while not name:
+        name = input('Tell me the name for the second player: ')
+    return name
+
+
 def second_player(list):
     while True:
-
-        player = input('Player_2(Choose a number from 1-9):').strip()
+        player = input(f'{second_name()}:').strip()
         if player.isdigit():
             player = int(player)
             if player in list:
@@ -163,7 +176,7 @@ def game_player():
     print_board(matrix)
     while turn_round <= 9:
         if turn_round % 2 == 0:
-            player_move = first_player()
+            player_move = first_player(valid_moves)
             if player_move in valid_moves:
 
                 modified_board(matrix, player_move, 'X')
@@ -187,9 +200,6 @@ def game_player():
             if win != 'STOP':
                 print('Game over!')
                 break
-
-
-
 
 
 def checking_win(matrix):
@@ -251,7 +261,7 @@ def new_game():
     while True:
         play_again = input('Do you want to play again!: ').lower().strip()
         if play_again == 'y' or play_again == 'yes':
-            game()
+             main()
         if play_again == 'n' or play_again == 'no':
             print('Goodbye, cya!')
             break
