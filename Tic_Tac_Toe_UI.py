@@ -19,18 +19,6 @@ def greetings():
         name = input('What is your name?: ').capitalize().strip()
 
     print(f'Alright {name},do you want to play Tic Tac Toe? If yes just press y  or to quit just press q.')
-    while True:
-        start = input('Press here...').lower().strip()
-        if start == 'y' or start == 'yes':
-            start_game = True
-            break
-        if start == 'q' or start == 'quit' or start == 'n' or start == 'no':
-            start_game = False
-            break
-
-        else:
-            print('Invalid choices, please try again!')
-    return start_game
 
 
 def game_mode():
@@ -53,6 +41,7 @@ def board():
 
 
 def print_board(matrix):
+
     print(f'''
             {matrix[0][0]} | {matrix[0][1]} | {matrix[0][2]}
            ___|___|___
@@ -62,7 +51,7 @@ def print_board(matrix):
         ''')
 
 
-# def first_name():
+# def first_name():# i dont know how to do with the name :(
 #     name = None
 #     while not name:
 #         name = input('Tell me the name for the first player: ')
@@ -71,15 +60,24 @@ def print_board(matrix):
 
 def first_player(list):
     while True:
+
         player = input(f'Player_1:').strip()
+
         if player.isdigit():
+
             player = int(player)
+
             if player in list:
+
                 break
+
             else:
+
                 print('Invalid number, please choose a number form 0 to 9! ')
         else:
+
             print('Invalid number! ')
+
     return player
 
 
@@ -92,24 +90,36 @@ def first_player(list):
 
 def second_player(list):
     while True:
+
         player = input('Player_2:').strip()
+
         if player.isdigit():
+
             player = int(player)
+
             if player in list:
+
                 break
+
             else:
+
                 print('Invalid number, please choose a number form 0 to 9! ')
         else:
+
             print('Invalid number! ')
+
     return player
 
 
 def computer_choice(list):
+
     cpu = random.choice(list)
+
     return cpu
 
 
 def modified_board(matrix, num, turn):
+
     if num == 1:
 
         matrix[0][0] = turn
@@ -133,12 +143,19 @@ def modified_board(matrix, num, turn):
     elif num == 6:
 
         matrix[1][2] = turn
+
     elif num == 7:
+
         matrix[2][0] = turn
+
     elif num == 8:
+
         matrix[2][1] = turn
+
     elif num == 9:
+
         matrix[2][2] = turn
+
     return matrix
 
 
@@ -155,7 +172,7 @@ def game_bot():
         if turn_round < 9:
             if turn_round % 2 == 0:
 
-                player_move = first_player()
+                player_move = first_player(valid_moves)
 
                 if player_move in valid_moves:
 
@@ -183,7 +200,7 @@ def game_bot():
 
                 win = checking_win(matrix)
 
-                if win != 'STOP':
+                if win != 'GO':
 
                     print('Game over!')
 
@@ -233,7 +250,6 @@ def game_player():
 
                 print_board(matrix)
 
-                print('print_board(matrix)')
 
             win = checking_win(matrix)
 
@@ -310,7 +326,7 @@ def new_game():
         play_again = input('Do you want to play again!: ').lower().strip()
         if play_again == 'y' or play_again == 'yes':
             main()
-        if play_again == 'n' or play_again == 'no':
+        elif play_again == 'n' or play_again == 'no':
             print('Goodbye, cya!')
             break
         else:
@@ -318,8 +334,25 @@ def new_game():
 
 
 def main():
-    pass
+    start = input('Press here Y/Q...').lower().strip()
+    if start == 'y' or start == 'yes':
+        mode=game_mode()
+        if mode == 1:
+            game_bot()
+        elif mode == 2:
+            game_player()
+    elif start == 'q' or start == 'quit' or start == 'n' or start == 'no':
+        print('Goodbye!')
+
+    else:
+        print('Invalid choices, please try again!')
+
+
+
 
 
 if __name__ == '__main__':
-    game_player()
+    # title()
+    # greetings()
+    main()
+    new_game()
