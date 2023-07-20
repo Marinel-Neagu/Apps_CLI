@@ -62,17 +62,16 @@ def print_board(matrix):
         ''')
 
 
-def first_name():
-    name = None
-    while not name:
-        name = input('Tell me the name for the first player: ')
-    return name
-
+# def first_name():
+#     name = None
+#     while not name:
+#         name = input('Tell me the name for the first player: ')
+#     return name
 
 
 def first_player(list):
     while True:
-        player = input(f'{first_name()} :').strip()
+        player = input(f'Player_1:').strip()
         if player.isdigit():
             player = int(player)
             if player in list:
@@ -84,16 +83,16 @@ def first_player(list):
     return player
 
 
-def second_name():
-    name = None
-    while not name:
-        name = input('Tell me the name for the second player: ')
-    return name
+# def second_name():
+#     name = None
+#     while not name:
+#         name = input('Tell me the name for the second player: ')
+#     return name
 
 
 def second_player(list):
     while True:
-        player = input(f'{second_name()}:').strip()
+        player = input('Player_2:').strip()
         if player.isdigit():
             player = int(player)
             if player in list:
@@ -112,16 +111,27 @@ def computer_choice(list):
 
 def modified_board(matrix, num, turn):
     if num == 1:
+
         matrix[0][0] = turn
+
     elif num == 2:
+
         matrix[0][1] = turn
+
     elif num == 3:
+
         matrix[0][2] = turn
+
     elif num == 4:
+
         matrix[1][0] = turn
+
     elif num == 5:
+
         matrix[1][1] = turn
+
     elif num == 6:
+
         matrix[1][2] = turn
     elif num == 7:
         matrix[2][0] = turn
@@ -134,36 +144,50 @@ def modified_board(matrix, num, turn):
 
 def game_bot():
     matrix = board()
+
     valid_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
     turn_round = 0
+
     print_board(matrix)
-    while turn_round <= 9:
-        if turn_round % 2 == 0:
-            player_move = first_player()
-            if player_move in valid_moves:
 
-                modified_board(matrix, player_move, 'X')
+    while True:
+        if turn_round < 9:
+            if turn_round % 2 == 0:
 
-                valid_moves.remove(player_move)
+                player_move = first_player()
+
+                if player_move in valid_moves:
+
+                    modified_board(matrix, player_move, 'X')
+
+                    valid_moves.remove(player_move)
+
+                    turn_round += 1
+
+                else:
+
+                    print('Invalid Move, try again!')
+
+            if turn_round % 2 != 0 and turn_round < 9:
+
+                computer_move = computer_choice(valid_moves)
+
+                modified_board(matrix, computer_move, 'O')
+
+                valid_moves.remove(computer_move)
 
                 turn_round += 1
-            else:
-                print('Invalid Move, try again!')
 
-        if turn_round % 2 != 0 and turn_round < 9:
-            computer_move = computer_choice(valid_moves)
+                print_board(matrix)
 
-            modified_board(matrix, computer_move, 'O')
+                win = checking_win(matrix)
 
-            valid_moves.remove(computer_move)
-            turn_round += 1
-            print_board(matrix)
-            win = checking_win(matrix)
-            if win != 'STOP':
-                print('Game over!')
-                break
+                if win != 'STOP':
 
+                    print('Game over!')
 
+                    break
         else:
             print('It is a tie ')
             break
@@ -171,35 +195,59 @@ def game_bot():
 
 def game_player():
     matrix = board()
+
     valid_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
     turn_round = 0
+
     print_board(matrix)
-    while turn_round <= 9:
-        if turn_round % 2 == 0:
-            player_move = first_player(valid_moves)
-            if player_move in valid_moves:
 
-                modified_board(matrix, player_move, 'X')
+    while True:
+        if turn_round < 9:
 
-                valid_moves.remove(player_move)
+            if turn_round % 2 == 0:
+
+                player_move = first_player(valid_moves)
+
+                if player_move in valid_moves:
+
+                    modified_board(matrix, player_move, 'X')
+
+                    valid_moves.remove(player_move)
+
+                    turn_round += 1
+
+                    print_board(matrix)
+
+                else:
+                    print('Invalid Move, try again!')
+
+            if turn_round % 2 != 0 and turn_round < 9:
+                second_player_move = second_player(valid_moves)
+
+                modified_board(matrix, second_player_move, 'O')
+
+                valid_moves.remove(second_player_move)
 
                 turn_round += 1
+
                 print_board(matrix)
-            else:
-                print('Invalid Move, try again!')
 
-        if turn_round % 2 != 0 and turn_round < 9:
-            second_player_move = second_player(valid_moves)
+                print('print_board(matrix)')
 
-            modified_board(matrix, second_player_move, 'O')
-
-            valid_moves.remove(second_player_move)
-            turn_round += 1
-            print_board(matrix)
             win = checking_win(matrix)
-            if win != 'STOP':
-                print('Game over!')
+
+            if win != 'GO':
+                print('Game over')
+
+                print('print(Game over)')
+
                 break
+        else:
+
+            print('It is a tie')
+
+            break
 
 
 def checking_win(matrix):
@@ -254,14 +302,14 @@ def checking_win(matrix):
         print("O has won!")
         return "O"
     else:
-        return 'STOP'
+        return 'GO'
 
 
 def new_game():
     while True:
         play_again = input('Do you want to play again!: ').lower().strip()
         if play_again == 'y' or play_again == 'yes':
-             main()
+            main()
         if play_again == 'n' or play_again == 'no':
             print('Goodbye, cya!')
             break
