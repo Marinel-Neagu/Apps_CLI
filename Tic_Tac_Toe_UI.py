@@ -20,6 +20,20 @@ def greetings():
 
     print(f'Alright {name},do you want to play Tic Tac Toe? If yes just press y  or to quit just press q.')
 
+def start():
+    start = input('Press here Y/Q...').lower().strip()
+    if start == 'y' or start == 'yes':
+        mode = game_mode()
+        if mode == 1:
+            player_vs_computer()
+        elif mode == 2:
+            player_vs_player()
+    elif start == 'q' or start == 'quit' or start == 'n' or start == 'no':
+        print('Goodbye!')
+
+    else:
+        print('Invalid choices, please try again!')
+
 
 def game_mode():
     print('Do you want to play against a player or a computer?  ')
@@ -41,7 +55,6 @@ def board():
 
 
 def print_board(matrix):
-
     print(f'''
             {matrix[0][0]} | {matrix[0][1]} | {matrix[0][2]}
            ___|___|___
@@ -51,14 +64,7 @@ def print_board(matrix):
         ''')
 
 
-# def first_name():# i dont know how to do with the name :(
-#     name = None
-#     while not name:
-#         name = input('Tell me the name for the first player: ')
-#     return name
-
-
-def first_player(list):
+def first_player(matrix):
     while True:
 
         player = input(f'Player_1:').strip()
@@ -67,7 +73,7 @@ def first_player(list):
 
             player = int(player)
 
-            if player in list:
+            if player in matrix:
 
                 break
 
@@ -81,14 +87,7 @@ def first_player(list):
     return player
 
 
-# def second_name():
-#     name = None
-#     while not name:
-#         name = input('Tell me the name for the second player: ')
-#     return name
-
-
-def second_player(list):
+def second_player(matrix):
     while True:
 
         player = input('Player_2:').strip()
@@ -97,7 +96,7 @@ def second_player(list):
 
             player = int(player)
 
-            if player in list:
+            if player in matrix:
 
                 break
 
@@ -111,15 +110,13 @@ def second_player(list):
     return player
 
 
-def computer_choice(list):
-
-    cpu = random.choice(list)
+def computer_choice(matrix):
+    cpu = random.choice(matrix)
 
     return cpu
 
 
 def modified_board(matrix, num, turn):
-
     if num == 1:
 
         matrix[0][0] = turn
@@ -159,7 +156,7 @@ def modified_board(matrix, num, turn):
     return matrix
 
 
-def game_bot():
+def player_vs_computer():
     matrix = board()
 
     valid_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -201,7 +198,6 @@ def game_bot():
                 win = checking_win(matrix)
 
                 if win != 'GO':
-
                     print('Game over!')
 
                     break
@@ -210,7 +206,7 @@ def game_bot():
             break
 
 
-def game_player():
+def player_vs_player():
     matrix = board()
 
     valid_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -250,13 +246,10 @@ def game_player():
 
                 print_board(matrix)
 
-
             win = checking_win(matrix)
 
             if win != 'GO':
                 print('Game over')
-
-                print('print(Game over)')
 
                 break
         else:
@@ -285,7 +278,7 @@ def checking_win(matrix):
     elif (matrix[2][0] == 'O' and matrix[2][1] == 'O' and matrix[2][2] == 'O'):
         print("O has won!")
         return "O"
-    ### Y axis
+
     if matrix[0][0] == 'X' and matrix[1][0] == 'X' and matrix[2][0] == 'X':
         print("X has won!")
         return "X"
@@ -334,22 +327,7 @@ def new_game():
 
 
 def main():
-    start = input('Press here Y/Q...').lower().strip()
-    if start == 'y' or start == 'yes':
-        mode=game_mode()
-        if mode == 1:
-            game_bot()
-        elif mode == 2:
-            game_player()
-    elif start == 'q' or start == 'quit' or start == 'n' or start == 'no':
-        print('Goodbye!')
-
-    else:
-        print('Invalid choices, please try again!')
-
-
-
-
+    pass
 
 if __name__ == '__main__':
     # title()
