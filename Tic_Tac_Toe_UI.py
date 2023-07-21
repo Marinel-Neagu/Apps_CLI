@@ -20,15 +20,16 @@ def greetings():
 
     print(f'Alright {name},do you want to play Tic Tac Toe? If yes just press y  or to quit just press q.')
 
+
 def start():
-    start = input('Press here Y/Q...').lower().strip()
-    if start == 'y' or start == 'yes':
+    start_game = input('Press here Y/Q...').lower().strip()
+    if start_game == 'y' or start_game == 'yes':
         mode = game_mode()
         if mode == 1:
             player_vs_computer()
         elif mode == 2:
             player_vs_player()
-    elif start == 'q' or start == 'quit' or start == 'n' or start == 'no':
+    elif start_game == 'q' or start_game == 'quit' or start_game == 'n' or start_game == 'no':
         print('Goodbye!')
 
     else:
@@ -328,6 +329,7 @@ def new_game():
 
 def main():
     pass
+
 
 if __name__ == '__main__':
     # title()
