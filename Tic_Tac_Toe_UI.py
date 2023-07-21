@@ -332,7 +332,7 @@ def main():
 
 
 if __name__ == '__main__':
-    # title()
-    # greetings()
+    title()
+    greetings()
     main()
     new_game()
