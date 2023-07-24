@@ -320,6 +320,7 @@ def new_game():
         play_again = input('Do you want to play again!: ').lower().strip()
         if play_again == 'y' or play_again == 'yes':
             main()
+
         elif play_again == 'n' or play_again == 'no':
             print('Goodbye, cya!')
             break
@@ -328,7 +329,13 @@ def new_game():
 
 
 def main():
-    pass
+    game_mode()
+    if game_mode() == 1:
+        player_vs_computer()
+    elif game_mode() == 2:
+        player_vs_player()
+    else:
+        print('Invalid input')
 
 
 if __name__ == '__main__':
