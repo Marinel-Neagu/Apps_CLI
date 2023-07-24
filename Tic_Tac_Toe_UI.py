@@ -329,7 +329,6 @@ def new_game():
 
 
 def main():
-    game_mode()
     if game_mode() == 1:
         player_vs_computer()
     elif game_mode() == 2:
