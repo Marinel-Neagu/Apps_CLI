@@ -1,9 +1,19 @@
 def num1():
     while True:
         start_currency = input('Please chose the currency do you have:').strip().upper()
+        if start_currency in currency:
+            return start_currency
+        else:
+            print('Please choose from the list!')
 
 
-
+def num2():
+    while True:
+        start_currency = input('Please chose the currency do you have:').strip().upper()
+        if start_currency in currency:
+            return start_currency
+        else:
+            print('Please choose from the list!')
 
 
 currency = {
