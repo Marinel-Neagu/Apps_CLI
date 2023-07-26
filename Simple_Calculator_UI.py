@@ -119,6 +119,7 @@ def mode():
             print('Sorry this is bad')
 
 
+# the main program
 def main():
     title()
     while True:
@@ -155,5 +156,6 @@ def main():
             break
 
 
+# execute the program
 if __name__ == '__main__':
     main()
