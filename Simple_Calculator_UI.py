@@ -28,7 +28,7 @@ def num1():
 # asking and checking for  the second number
 def num2():
     while True:
-        num = input('Enter your first number: ')
+        num = input('Enter your second number: ')
         if num.isdigit():
             num = float(num)
             return num
@@ -92,22 +92,24 @@ def new_mode():
 def mode():
     operation = None
     while not operation:
-        operation = int(input("Chose your operation, by typing a number from the list!: "))
         try:
-            first_number = num1()
-            second_number = num2()
+            operation = int(input("Chose your operation, by typing a number from the list!: "))
+
             if operation == 1:
-                add(first_number, second_number)
+                add(num1(), num2())
             elif operation == 2:
-                subtract(first_number, second_number)
+                subtract(num1(), num2())
             elif operation == 3:
-                multiply(first_number, second_number)
+                multiply(num1(), num2())
             elif operation == 4:
-                divide(first_number, second_number)
+                divide(num1(), num2())
             elif operation == 5:
-                power(first_number, second_number)
+                power(num1(), num2())
             elif operation == 6:
-                square_root(first_number)
+                square_root(num1())
+
+            else:
+                print('You have to put a number from the list!')
         except ValueError:
             print('You have to put a integer pls!')
 
@@ -119,16 +121,13 @@ def mode():
 
 def main():
     title()
-    mode()
-    new_mode()
-    choice = None
     while True:
         try:
             choice = int(input('Press here....: '))
             if choice == 2:
                 print(f'Goodbye!')
                 break
-            elif choice == 1:
+            if choice == 1:
                 print('Press one number from the list below!')
                 print("Select operation:")
 
@@ -142,7 +141,6 @@ def main():
 
     ''')
 
-                mode()
                 new_mode()
 
 
