@@ -1,6 +1,10 @@
 import random
 
 
+def rounds():
+    pass
+
+
 def game():
     computer_score = 0
     player_score = 0
