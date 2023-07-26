@@ -1,53 +1,60 @@
 import math
 
 
-def add():
+# asking and checking for  the first number
+def num1():
     while True:
-        try:
-            first_number = float(input('Enter your first number: '))
-            second_number = float(input('Enter your second number: '))
-            result = first_number + second_number
-            print('Your addition is: ', result)
-        except ValueError:
-            print('You have to put just numbers')
-
-        return result
+        num = input('Enter your first number: ')
+        if num.isdigit():
+            num = float(num)
+            return num
+        else:
+            print('You have to put a digit!')
 
 
-def subtract():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
+# asking and checking for  the second number
+def num2():
+    while True:
+        num = input('Enter your first number: ')
+        if num.isdigit():
+            num = float(num)
+            return num
+        else:
+            print('You have to put a digit!')
+
+
+# sum function
+def add(first_number, second_number):
+    result = first_number + second_number
+    print('Your addition is: ', result)
+    return result
+
+
+def subtract(first_number, second_number):
     result = first_number - second_number
     print('Your subtraction is: ', result)
     return result
 
 
-def multiply():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
+def multiply(first_number, second_number):
     result = first_number * second_number
     print('Your multiply is: ', result)
     return result
 
 
-def divide():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
+def divide(first_number, second_number):
     result = first_number / second_number
     print('Your divide is: ', result)
     return result
 
 
-def power():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
+def power(first_number, second_number):
     result = first_number ** second_number
     print('Your power is: ', result)
     return result
 
 
-def square_root():
-    number = float(input('Enter your  number: '))
+def square_root(number):
     result = math.sqrt(number)
     print('Your square root is: ', result)
     return result
@@ -67,111 +74,27 @@ def main():
     while not operation:
         operation = int(input("Chose your operation, by typing a number from the list!: "))
         try:
+            first_number = num1()
+            second_number = num2()
             if operation == 1:
-                add()
+                add(first_number, second_number)
             elif operation == 2:
-                subtract()
+                subtract(first_number, second_number)
             elif operation == 3:
-                multiply()
+                multiply(first_number, second_number)
             elif operation == 4:
-                divide()
+                divide(first_number, second_number)
             elif operation == 5:
-                power()
+                power(first_number, second_number)
             elif operation == 6:
-                square_root()
-        except ValueError:
-            print('You have to put a integer pls!')
-            operation = int(input("Choose again, pls!: "))
-        except Exception:
-            print("This a serious problem!")
-            break
-
-
-import math
-
-
-def add():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
-    result = first_number + second_number
-    print('Your addition is: ', result)
-    return result
-
-
-def subtract():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
-    result = first_number - second_number
-    print('Your subtraction is: ', result)
-    return result
-
-
-def multiply():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
-    result = first_number * second_number
-    print('Your multiply is: ', result)
-    return result
-
-
-def divide():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
-    result = first_number / second_number
-    print('Your divide is: ', result)
-    return result
-
-
-def power():
-    first_number = float(input('Enter your first number: '))
-    second_number = float(input('Enter your second number: '))
-    result = first_number ** second_number
-    print('Your power is: ', result)
-    return result
-
-
-def square_root():
-    number = float(input('Enter your  number: '))
-    result = math.sqrt(number)
-    print('Your square root is: ', result)
-    return result
-
-
-def new():
-    while main():
-
-        if not main():
-            print('Goodbye!')
-            break
-
-
-def main():
-    while True:
-        operation = int(input("Chose your operation, by typing a number from the list!: "))
-        try:
-            if operation == 1:
-                add()
-            elif operation == 2:
-                subtract()
-            elif operation == 3:
-                multiply()
-            elif operation == 4:
-                divide()
-            elif operation == 5:
-                power()
-            elif operation == 6:
-                square_root()
-            else:
-                print('Just chose from 1 to 6!')
+                square_root(first_number)
         except ValueError:
             print('You have to put a integer pls!')
 
+        except ZeroDivisionError:
+            print('You can t divide by zero man')
         except Exception:
-            print("This a serious problem!")
-            break
-
-        new_calculation = input('Do you want to calculate again? Type [yes/no]').lower()
-        return new_calculation in ['yes']
+            print('Sorry this is bad')
 
 
 if __name__ == '__main__':
