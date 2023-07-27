@@ -1,20 +1,23 @@
-def num1():
+def currency1():
     while True:
-        start_currency = input('Please chose the currency do you have:').strip().upper()
-        if start_currency in currency:
-            return start_currency
+        cur1 = input('Please chose the currency do you have:').strip().upper()
+        if cur1 in currency:
+            return cur1
         else:
             print('Please choose from the list!')
 
 
-def num2():
+def currency2():
     while True:
-        start_currency = input('Please chose the currency do you have:').strip().upper()
-        if start_currency in currency:
-            return start_currency
+        cur2 = input('Please chose the currency do you have:').strip().upper()
+        if cur2 in currency:
+            return cur2
         else:
             print('Please choose from the list!')
 
+
+def amount():
+    amount = input('Hi, please tell me how many money do you want to convert!')
 
 currency = {
     'USD': 1,
@@ -24,14 +27,11 @@ currency = {
 }
 for key, value in currency.items():
     print(key, ':', value)
-print('Hi, please tell me how many money do you want to convert!')
-while True:
-    money = int(input('Please press here the sum:').strip())
 
-    end_currency = input('Please chose the currency do you to tranform:').strip().upper()
+while True:
 
     if start_currency in currency and end_currency in currency:
-        conversion = (currency[start_currency] * money)/currency[end_currency]
+        conversion = (currency[start_currency] * money) / currency[end_currency]
 
         print('Here is your value:', conversion)
         break
