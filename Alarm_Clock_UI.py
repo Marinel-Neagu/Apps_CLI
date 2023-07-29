@@ -12,8 +12,7 @@ def title():
     print(f''' Please choose from the list above:
                 1.Timer
                 2.Alarm-Clock
-                3.Stopwatch
-                4.Clock
+                3.Clock
     ''')
 
 
@@ -78,18 +77,19 @@ def clock_alarm():
     alarm_set = user_timer()
     total_seconds = alarm_set[0] * 3600 + alarm_set[1] * 60 + alarm_set[2]
     total_seconds = int(total_seconds)
-    print(CLEAR)
+
     while True:
         try:
-            alarm = time.perf_counter()
-            alarm = int(alarm)
+
+            alarm = time.localtime()
+
             if alarm <= total_seconds:
-                time.sleep(1)
+                print('Tic tac,tic tac')
             else:
                 print('Wake Up!')
                 playsound('Music/Alarm.mp3')
                 break
-
+            time.sleep(1)
         except KeyboardInterrupt:
             print('The clock is stopped')
 
