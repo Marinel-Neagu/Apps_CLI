@@ -1,5 +1,4 @@
 import time
-import threading
 from playsound import playsound
 
 CLEAR = '\033[2J'
@@ -26,18 +25,17 @@ def mode():
             return clock_mode
         elif clock_mode == 'q' or clock_mode == 'quit':
             print('Goodbye, have a good day!')
-            break
+            return clock_mode
         else:
             print('Please choose form the list!')
 
 
 def user_timer():
-    alarm = None
     print('Insert  a time. Like(06:30:00) and to quit press "q" or "quit"')
-    while not alarm:
+    while True:
         alarm = input('Insert...').strip()
         alarm_list = alarm.split(':')
-        if alarm != 'q' or alarm != 'quit':
+        if alarm == 'q' or alarm == 'quit':
             print('Goodbye!')
             break
         elif alarm_list[0].isdigit() and alarm_list[1].isdigit() and alarm_list[1].isdigit():
@@ -72,7 +70,7 @@ def clock_timer():
         except KeyboardInterrupt:
             print('The clock is stopped')
             break
-    playsound('')
+    playsound('Music/Alarm.mp3')
     print('The time is up!')
 
 
@@ -80,24 +78,20 @@ def clock_alarm():
     alarm_set = user_timer()
     total_seconds = alarm_set[0] * 3600 + alarm_set[1] * 60 + alarm_set[2]
     total_seconds = int(total_seconds)
-
     print(CLEAR)
     while True:
         try:
             alarm = time.perf_counter()
+            alarm = int(alarm)
             if alarm <= total_seconds:
                 time.sleep(1)
-                time_left = total_seconds - alarm
-                hours_left = time_left // 3600
-                minutes_left = (time_left % 3600) // 60
-                seconds_left = time_left % 60
-                print(f'{CLEAR_AND_RETURN}{hours_left:02d}:{minutes_left:02d}:{seconds_left:02d}')
+            else:
+                print('Wake Up!')
+                playsound('Music/Alarm.mp3')
+                break
 
         except KeyboardInterrupt:
             print('The clock is stopped')
-
-        print('Wake Up!')
-        playsound('Games_Lessons/Music/Alarm.mp3')
 
 
 def clock():
@@ -110,10 +104,9 @@ def clock():
 
 def main():
     title()
-    mode_selected = mode()
     while True:
+        mode_selected = mode()
         if mode_selected == 'q' or mode_selected == 'quit':
-            print('Goodbye')
             break
         elif mode_selected == 1:
             clock_timer()
@@ -124,10 +117,8 @@ def main():
             pass
         elif mode_selected == 4:
             clock()
-
-
         else:
-            print('Invalid!')
+            print('Invalid input!')
 
 
 if __name__ == '__main__':
