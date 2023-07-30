@@ -14,7 +14,7 @@ def dice():
                 print('You rolled:', result)
                 break
 
-            return result
+        return result
 
     except ValueError:
         print('Sorry man, you have to put a integer!!!')
