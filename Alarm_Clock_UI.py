@@ -41,7 +41,7 @@ def user_timer():
         alarm_list[0] = int(alarm_list[0])
         alarm_list[1] = int(alarm_list[1])
         alarm_list[2] = int(alarm_list[2])
-        if 0 <= int(alarm_list[0]) < 24 and 0 <= int(alarm_list[1]) <= 60 and 0 <= int(alarm_list[2]) <= 60:
+        if 0 <= int(alarm_list[0]) < 24 and 0 <= int(alarm_list[1]) <= 59 and 0 <= int(alarm_list[2]) <= 60:
             return alarm_list
         else:
             print('Please insert correct hours and minutes! The hours should be less than 24 and minutes less '
@@ -106,7 +106,7 @@ def clock_alarm():
                 break
 
             else:
-                print(f'{CLEAR_AND_RETURN}Goodnight')
+                print(f'Tic Tac....')
     except IndexError:
         print('Not enough numbers')
     except TypeError:
