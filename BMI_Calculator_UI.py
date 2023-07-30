@@ -1,62 +1,99 @@
 def title():
-    pass
+    print(f'''
+
+            888888b.   888b     d888 8888888 
+            888  "88b  8888b   d8888   888   
+            888  .88P  88888b.d88888   888   
+            8888888K.  888Y88888P888   888   
+            888  "Y88b 888 Y888P 888   888   
+            888    888 888  Y8P  888   888   
+            888   d88P 888   "   888   888   
+            8888888P"  888       888 8888888
+''')
 
 
 def hello():
-    name = input('What is you name').strip().capitalize()
+    name = input('What is you name: ').strip().capitalize()
     print(f'Hello {name}. Do you want to see you BMI?')
-    start = input('Press here y/yes to calculate or q/quit to exit')
+
+
+def ask_for_bmi_calculation():
+    start = input('Press here y/yes to calculate or q/quit to exit: ').strip().lower()
     return start in ['yes', 'y']
 
 
 def height():
-    try:
-        user_height = input("Please tell me your height in meters: ").strip()
-        user_height_list = user_height.split('.')
-        if user_height_list[0].isdigit() and user_height_list[1]:
-            user_height_list[0] = int(user_height_list[0])
-            user_height_list[1] = int(user_height_list[1])
-            return user_height_list
-        else:
-            print('Please insert a numbers not letters!')
+    while True:
+        try:
+            user_height = input("Please tell me your height in meters: ").strip()
+            user_height_list = user_height.split('.')
+            if user_height_list[0].isdigit() and user_height_list[1]:
+                return user_height
+            else:
+                print('Please insert a numbers not letters!')
 
-    except IndexError:
-        print('Please insert your full height')
-    except Exception:
-        print('Please report this program to my workers :O')
+        except IndexError:
+            print('Please insert your full height')
+        except Exception:
+            print('Please report this program to my workers :O')
 
 
 def weight():
-    try:
-        user_height = input('Please tell me your weight in kilograms: ').strip()
-        user_height_list = user_height.split('.')
-        if user_height_list[0].isdigit() and user_height_list[1]:
-            user_height_list[0] = int(user_height_list[0])
-            user_height_list[1] = int(user_height_list[1])
-            return user_height_list
-        else:
-            print('Please insert a numbers not letters!')
+    while True:
+        try:
+            user_weight = input('Please tell me your weight in kilograms: ').strip()
+            user_weight_list = user_weight.split('.')
+            if user_weight_list[0].isdigit() and user_weight_list[1]:
+                return user_weight
 
-    except IndexError:
-        print('Please insert your full weight!')
-    except Exception:
-        print('Please report this program to my workers :O')
+            else:
+                print('Please insert a numbers not letters!')
+
+        except IndexError:
+            print('Please insert your full weight!')
+        except Exception:
+            print('Please report this program to my workers :O')
 
 
 def BMI(height, weight):
-    bmi = weight / (height ** 2)
+    bmi = (weight / (height ** 2))
+    bmi = round(bmi, 1)
     return bmi
 
 
+def checking_BMI(user_BMI):
+    bmi = user_BMI
+    if bmi <= 18.5:
+        print('Your health is very bad, please eat something! Your are underweight!')
+    elif 18.5 < bmi <= 24.9:
+        print('Your weight is normal!')
+    elif 25 < bmi <= 29.9:
+        print('Your weight is kind of overweight!')
+    elif 30 < bmi <= 34.9:
+        print('You are kind of Obese, the first tipe of course!')
+    elif 35 < bmi <= 39.9:
+        print('You are kind of Obese, the second  tipe!. Is good the second place not bad.')
+    elif bmi >= 40:
+        print('You are dead man, how are you still alive. You have Morbidly Obese.')
+    else:
+        print('Sorry there is a problem')
+
+
 def main():
-    hello_user = hello()
     while True:
-        if hello_user:
-            height_user = height()
-            weight_user = weight()
-            print('You BMI is:', BMI(height_user, weight_user))
-    pass
+        if ask_for_bmi_calculation():
+            height_user = float(height())
+            weight_user = float(weight())
+            bmi_user = BMI(height_user, weight_user)
+
+            print(f'You BMI is: {bmi_user}')
+            checking_BMI(bmi_user)
+        else:
+            print('Goodbye!')
+            break
 
 
 if __name__ == '__main__':
+    title()
+    hello()
     main()
