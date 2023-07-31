@@ -2,7 +2,7 @@ import time
 from playsound import playsound
 
 CLEAR = '\033[2J'
-CLEAR_AND_RETURN = "\033[H"
+CLEAR_AND_RETURN = '\033[H'
 GREEN = '\033[32m'
 BOLD = '\033[1m'
 RESET_FORMAT = '\033[0m'
@@ -70,8 +70,11 @@ def clock_timer():
             except KeyboardInterrupt:
                 print('The clock is stopped')
                 break
-        playsound('Music/Alarm.mp3')
+        playsound('D:\Begginer-Projects\Music\Alarm.mp3')
         print('The time is up!')
+    except KeyboardInterrupt:
+        print(CLEAR_AND_RETURN)
+        main()
     except IndexError:
         print('Not enough numbers')
     except TypeError:
@@ -102,11 +105,14 @@ def clock_alarm():
             time.sleep(1)
             if alarm_ <= time_:
                 print(f'Wake_up')
-                playsound('Music/Alarm.mp3')
+                playsound('D:\Begginer-Projects\Music\Alarm.mp3')
                 break
 
             else:
                 print(f'Tic Tac....')
+    except KeyboardInterrupt:
+        print(CLEAR_AND_RETURN)
+        main()
     except IndexError:
         print('Not enough numbers')
     except TypeError:
@@ -122,6 +128,9 @@ def clock():
             time_format = f'%A {BOLD}{GREEN}%H:%M:%S {RESET_FORMAT}'
             print(time.strftime(f'{CLEAR_AND_RETURN} {time_format}'))
             time.sleep(1)
+    except KeyboardInterrupt:
+        print(CLEAR_AND_RETURN)
+        main()
     except IndexError:
         print('Not enough numbers')
     except TypeError:
