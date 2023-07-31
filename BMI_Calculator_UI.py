@@ -42,18 +42,19 @@ def weight():
     except Exception:
         print('Please report this program to my workers :O')
 
+
 def BMI(height, weight):
-    bmi = weight/(height**2)
+    bmi = weight / (height ** 2)
     return bmi
 
 
 def main():
     hello_user = hello()
     while True:
-        if hello_user :
-            height_user=height()
-            weight_user=weight()
-            print('You BMI is:',BMI(height_user,weight_user))
+        if hello_user:
+            height_user = height()
+            weight_user = weight()
+            print('You BMI is:', BMI(height_user, weight_user))
     pass
 
 
