@@ -1,3 +1,6 @@
+from ansi_code import *
+
+
 def title():
     print(f'''
 
@@ -85,15 +88,19 @@ def main():
             height_user = float(height())
             weight_user = float(weight())
             bmi_user = BMI(height_user, weight_user)
-
-            print(f'You BMI is: {bmi_user}')
+            print('***************************************************************************')
+            print(f'You BMI is:{GREEN} {bmi_user} {RESET}')
+            print(RED)
+            print(BOLD)
             checking_BMI(bmi_user)
+            print(RESET)
         else:
             print('Goodbye!')
             break
 
 
 if __name__ == '__main__':
+
     title()
     hello()
     main()
