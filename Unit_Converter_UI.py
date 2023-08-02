@@ -1,7 +1,51 @@
 # unit convertor, to choose to convert a unit to another unit
-from ansi_code import CLEAR_SCREEN
-
 list_unit = (1, 2, 3)
+
+length_unit = {
+	'Exa-metre': 10 ** 18,
+	'Peta-metre': 10 ** 15,
+	'Ter-metre': 10 ** 12,
+	'Giga-metre': 10 ** 9,
+	'Megametre': 10 ** 6,
+	'Kilometre': 10 ** 3,
+	'Hectometre': 10 ** 2,
+	'Deca-metre': 10 ** 1,
+	'Metre': 1,
+	'Decimetre': 10 ** -1,
+	'Centimetre': 10 ** -2,
+	'Millimetre': 10 ** -3,
+	'Micrometre': 10 ** -6,
+	'Nanometre': 10 ** -9,
+	'Pico-metre': 10 ** -12,
+	'Femto-metre': 10 ** -15,
+	'Atto-metre': 10 ** -18
+}
+
+mass_unit = {
+	'Exa-gram': 10 ** 18,
+	'Peta-gram': 10 ** 15,
+	'Ter-gram': 10 ** 12,
+	'Giga-gram': 10 ** 9,
+	'Megagram': 10 ** 6,
+	'Kilogram': 10 ** 3,
+	'Hectogram': 10 ** 2,
+	'Deca-gram': 10 ** 1,
+	'Gram': 1,
+	'Decigram': 10 ** -1,
+	'Centigram': 10 ** -2,
+	'Milligram': 10 ** -3,
+	'Microgram': 10 ** -6,
+	'Nanogram': 10 ** -9,
+	'Pico-gram': 10 ** -12,
+	'Femto-gram': 10 ** -15,
+	'Atto-gram': 10 ** -18
+}
+
+time_unit = {
+	'Day': 86400,
+	'Hour': 3600,
+	'Minute': 60,
+	'Second': 1}
 
 
 def title():
@@ -29,8 +73,7 @@ def user_choice():
 			else:
 				print('Please choose a number just from the list!')
 		elif unit == 'q' or unit == 'quit':
-			print('Goodbye')
-			break
+			return unit
 		else:
 			print('Please choose a number from the table or press q to quit!')
 
@@ -86,27 +129,9 @@ def print_table(unit):
 		print(f'{count}.{k}')
 
 
-def main():
-	title()
-	conversion()
-	while True:
-		
-		new_uit = input('Do you want to try a diffrent unit? Press y/yes to continue or q/quit to not: ').strip(
-		
-		).lower()
-		if new_uit == 'y' or new_uit == 'yes':
-			print(CLEAR_SCREEN)
-			conversion()
-		elif new_uit == 'q' or new_uit == 'quit':
-			print('Goodbye!')
-			break
-		else:
-			print('You have to press y or q!')
-
-
-def conversion():
-	user_unit = user_choice()
+def exchange():  # this is a text
 	
+	user_unit = user_choice()
 	if user_unit == 1:
 		print_table(mass_unit)
 		unit_selected(mass_unit)
@@ -118,51 +143,20 @@ def conversion():
 		unit_selected(time_unit)
 
 
-length_unit = {
-	'Exa-metre': 10 ** 18,
-	'Peta-metre': 10 ** 15,
-	'Ter-metre': 10 ** 12,
-	'Giga-metre': 10 ** 9,
-	'Megametre': 10 ** 6,
-	'Kilometre': 10 ** 3,
-	'Hectometre': 10 ** 2,
-	'Deca-metre': 10 ** 1,
-	'Metre': 1,
-	'Decimetre': 10 ** -1,
-	'Centimetre': 10 ** -2,
-	'Millimetre': 10 ** -3,
-	'Micrometre': 10 ** -6,
-	'Nanometre': 10 ** -9,
-	'Pico-metre': 10 ** -12,
-	'Femto-metre': 10 ** -15,
-	'Atto-metre': 10 ** -18
-}
+def main():
+	title()
+	exchange()
+	while True:
+		new_uit = input(
+			'Do you want to try a different unit? Press y/yes to continue or q/quit to not: ').strip().lower()
+		if new_uit == 'y' or new_uit == 'yes':
+			exchange()
+		elif new_uit == 'q' or new_uit == 'quit':
+			print('Goodbye!')
+			break
+		else:
+			print('You have to press y or q!')
 
-mass_unit = {
-	'Exa-gram': 10 ** 18,
-	'Peta-gram': 10 ** 15,
-	'Ter-gram': 10 ** 12,
-	'Giga-gram': 10 ** 9,
-	'Megagram': 10 ** 6,
-	'Kilogram': 10 ** 3,
-	'Hectogram': 10 ** 2,
-	'Deca-gram': 10 ** 1,
-	'Gram': 1,
-	'Decigram': 10 ** -1,
-	'Centigram': 10 ** -2,
-	'Milligram': 10 ** -3,
-	'Microgram': 10 ** -6,
-	'Nanogram': 10 ** -9,
-	'Pico-gram': 10 ** -12,
-	'Femto-gram': 10 ** -15,
-	'Atto-gram': 10 ** -18
-}
-
-time_unit = {
-	'Day': 86400,
-	'Hour': 3600,
-	'Minute': 60,
-	'Second': 1}
 
 if __name__ == '__main__':
 	main()
