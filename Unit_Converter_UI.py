@@ -1,5 +1,5 @@
 # unit convertor, to choose to convert a unit to another unit
-from ansi_code import *
+from ansi_code import CLEAR_SCREEN
 
 list_unit = (1, 2, 3)
 
@@ -11,16 +11,17 @@ def title():
 	|__| | \| |  |     |___ |__| | \|  \/  |___ |  \  |  |__| |  \ ''')
 	
 	print('''
-	1.Mass
-	2.Length
-	3.Time''')
+						1.Mass
+						2.Length
+						3.Time
+	''')
 
 
 def user_choice():
 	print('Please insert a number from the table for converting!')
 	
 	while True:
-		unit = input(' Insert here or press q to quit:')
+		unit = input(' Insert here or press q to quit:').strip().lower()
 		if unit.isdigit():
 			unit = int(unit)
 			if unit in list_unit:
@@ -45,7 +46,7 @@ def user_first_unit(list_unit):
 
 def user_second_unit(list_unit):
 	while True:
-		unit = input('Please choose a unit to transform to: ')
+		unit = input('Please choose a unit to transform to: ').strip()
 		if unit in list_unit:
 			return unit
 		else:
@@ -54,7 +55,7 @@ def user_second_unit(list_unit):
 
 def amount():
 	while True:
-		number = input('Please choose a amount:')
+		number = input('Please choose a amount:').strip()
 		if number.isdigit():
 			number = int(number)
 			return number
@@ -63,8 +64,8 @@ def amount():
 
 
 def conversion_unit(number, unit1, unit2, unit_list):
-	conversion = unit_list[unit1] / unit_list[unit2]
-	amount_conversion = conversion * number
+	x = unit_list[unit1] / unit_list[unit2]
+	amount_conversion = x * number
 	
 	return amount_conversion
 
