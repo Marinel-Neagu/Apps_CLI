@@ -29,7 +29,7 @@ def hello():
 
 def magic_ball_answer():
 	"""
-	Here the  words are made into a dictionary
+	Here the  words are made into a dictionary and the cpu pic a random number from them
 	
 	"""
 	# Store the magic ball answers as a multi-line string
