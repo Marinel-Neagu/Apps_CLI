@@ -1,4 +1,7 @@
-def user_first_number():  # Checking the first number
+def get_first_number():
+	"""
+	The player choose the first number, and it checks if is a number or not
+	"""
 	while True:
 		num1 = input('Please tell me a first number for the fibonacci series: ')
 		try:
@@ -13,13 +16,16 @@ def user_first_number():  # Checking the first number
 	return num1
 
 
-def user_second_number():  # The player choose the second number, and it checks if is a number or not
+def get_second_number():
+	"""
+	The player choose the second number, and it checks if is a number or not
+	"""
 	while True:
 		num2 = input('Please tell me a second number for the fibonacci series: ')
 		try:
 			num2 = int(num2)
 			if num2 < 0:
-				print('You have to put a positive number and bigger than the first number you selected before: ')
+				print('You have to put a positive number! ')
 			
 			else:
 				break
@@ -28,7 +34,10 @@ def user_second_number():  # The player choose the second number, and it checks 
 	return num2
 
 
-def user_limit():  # The player choose the  limit for the sequence and check it
+def user_limit():
+	"""
+	Ask for the limit from the user
+	"""
 	limit = None
 	while not limit:
 		try:
@@ -38,9 +47,12 @@ def user_limit():  # The player choose the  limit for the sequence and check it
 	return limit
 
 
-def fibonacci_sequence(): #
-	a = user_first_number()
-	b = user_second_number()
+def fibonacci_sequence():
+	"""
+Making the logic for fibonacci
+	"""
+	a = get_first_number()
+	b = get_second_number()
 	limit = user_limit()
 	fibonacci_list = [a, b]
 	
@@ -53,21 +65,27 @@ def fibonacci_sequence(): #
 				break
 		except ValueError:
 			print('Sorry, this is not a good value!!')
-	print('Here is you sequence: ', ', '.join(str(i) for i in fibonacci_list)) #  it iteration# for every number from
-# the fibonacci_list, and it puts it together with a "," between them
+	print('Here is you sequence: ', ', '.join(str(i) for i in fibonacci_list))
+	# it iteration for every number from 	the fibonacci_list, and it puts it together with a "," between them
 
 
-def new_fibonacci_sequence(): # asking for a new fibonacci sequence
-	while True:
-		new_sequence = input('Do you want to try a new sequence? Just press yes or q to exit: ')
-		if new_sequence == 'y' or new_sequence == 'yes':
-			fibonacci_sequence()
-		elif new_sequence == 'q' or new_sequence == 'quit':
-			print("Goodbye,have a good day!")
-			break
+def new_fibonacci_sequence():
+	""" asking for a new fibonacci sequence  """
+
+
+while True:
+	new_sequence = input('Do you want to try a new sequence? Just press yes or q to exit: ')
+	if new_sequence == 'y' or new_sequence == 'yes':
+		fibonacci_sequence()
+	elif new_sequence == 'q' or new_sequence == 'quit':
+		print("Goodbye,have a good day!")
+		break
 
 
 def main():
+	"""
+	Here is the main action
+	"""
 	fibonacci_sequence()
 	new_fibonacci_sequence()
 
