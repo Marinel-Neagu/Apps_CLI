@@ -1,22 +1,26 @@
 import random
 import string
 
+# Welcome message
 print('                            Password generator!!!                                     ')
 print('                             Press yes to choose!                  ')
 
+# Constants for valid choices
 YES_CHOICE = ['yes', 'y']
 NO_CHOICE = ['n', 'no', 'quit', 'q']
 
 
-def choices(type):
-	if type == 'yes' or type == 'y':
+# Function to handle yes/no choices
+def choices(choice):
+	if choice in YES_CHOICE:
 		return True
-	elif type == 'no' or type == 'n':
+	elif choice in NO_CHOICE:
 		return False
 	else:
 		print('Please insert yes or no!')
 
 
+# Function to input desired password length
 def password_lenght():
 	while True:
 		length_pass = input('How long do you want the password?: ').strip()
@@ -27,6 +31,7 @@ def password_lenght():
 			print('Please insert a number!')
 
 
+# Function to input number of passwords
 def password_amount():
 	while True:
 		numbers_of_passwords = input('How many passwords do you need?: ').strip()
@@ -37,40 +42,47 @@ def password_amount():
 			print('Please insert a number!')
 
 
+# Function to ask about adding upper case letters
 def upper():
 	letters_upper = input('Do you want to add upper letters?: ').lower().strip()
-	choices(letters_upper)
+	return choices(letters_upper)
 
 
+# Function to ask about adding lower case letters
 def lower():
 	letters_lower = input('Do you want to add lower letters?: ').lower().strip()
-	choices(letters_lower)
+	return choices(letters_lower)
 
 
+# Function to ask about adding digits
 def digit():
 	digits = input('Do you want to add digits?: ').strip().lower()
-	choices(digits)
+	return choices(digits)
 
 
+# Function to ask about adding punctuation
 def punctuation():
 	punctuations = input('Do you want to add punctuation?: ').lower().strip()
-	choices(punctuations)
+	return choices(punctuations)
 
 
+# Function to generate a new set of passwords
 def new_password_generator():
 	while True:
-		new_pass = input('Do you need a new set of password? Press yes to continue...')
-		if new_pass == 'yes' or new_pass == 'y':
+		new_pass = input('Do you need a new set of passwords? Press yes to continue...')
+		if new_pass in YES_CHOICE:
 			password_generator()
 			break
 		else:
 			print('Goodbye!')
 
 
+# Main password generation function
 def password_generator():
 	all_ = ''
 	amount = password_amount()
 	length_password = password_lenght()
+	
 	if upper():
 		all_ += string.ascii_uppercase
 	
@@ -84,9 +96,9 @@ def password_generator():
 		all_ += string.punctuation
 	
 	print('________________________________________________________________________')
-	print('Your passwords are this!')
+	print('Your passwords are as follows:')
 	for i in range(amount):
-		# Generate a random password by sampling characters from 'x' that is a list  of length 'length_password'
+		# Generate a random password by sampling characters from 'all_' with specified length
 		password = ''.join(random.sample(all_, length_password))
 		print(f'Password NO.{i + 1} =', password)
 
