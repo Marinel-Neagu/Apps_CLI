@@ -72,9 +72,11 @@ def new_password_generator():
 		new_pass = input('Do you need a new set of passwords? Press yes to continue...')
 		if new_pass in YES_CHOICE:
 			password_generator()
+		elif new_pass in NO_CHOICE:
+			print('Goodbye, have a nice day!')
 			break
 		else:
-			print('Goodbye!')
+			print('Please, insert y or no!')
 
 
 # Main password generation function
