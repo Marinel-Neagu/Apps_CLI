@@ -129,7 +129,7 @@ def print_table(unit):
 		print(f'{count}.{k}')
 
 
-def exchange():  # this is a text
+def exchange():
 	
 	user_unit = user_choice()
 	if user_unit == 1:
