@@ -81,29 +81,31 @@ def new_password_generator():
 
 # Main password generation function
 def password_generator():
-	all_ = ''
-	amount = password_amount()
-	length_password = password_lenght()
-	
-	if upper():
-		all_ += string.ascii_uppercase
-	
-	if lower():
-		all_ += string.ascii_lowercase
-	
-	if digit():
-		all_ += string.digits
-	
-	if punctuation():
-		all_ += string.punctuation
-	
-	print('________________________________________________________________________')
-	print('Your passwords are as follows:')
-	for i in range(amount):
-		# Generate a random password by sampling characters from 'all_' with specified length
-		password = ''.join(random.sample(all_, length_password))
-		print(f'Password NO.{i + 1} =', password)
-
+	try:
+		all_ = ''
+		amount = password_amount()
+		length_password = password_lenght()
+		
+		if upper():
+			all_ += string.ascii_uppercase
+		
+		if lower():
+			all_ += string.ascii_lowercase
+		
+		if digit():
+			all_ += string.digits
+		
+		if punctuation():
+			all_ += string.punctuation
+		
+		print('________________________________________________________________________')
+		print('Your passwords are as follows:')
+		for i in range(amount):
+			# Generate a random password by sampling characters from 'all_' with specified length
+			password = ''.join(random.sample(all_, length_password))
+			print(f'Password NO.{i + 1} =', password)
+	except ValueError:
+		print('Sorry, you need to choose a password that is less than')
 
 if __name__ == '__main__':
 	password_generator()

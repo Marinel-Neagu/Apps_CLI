@@ -42,7 +42,7 @@ def start():
 def game_mode():
 	print('Do you want to play against a player or a computer?  ')
 	while True:
-		mode = input(f'''Please just press 1 for computer and 2 to play against another  player: ''')
+		mode = input('''Please just press 1 for computer and 2 to play against another  player: ''')
 		if mode.isdigit():
 			mode = int(mode)
 			if mode == 1 or mode == 2:
