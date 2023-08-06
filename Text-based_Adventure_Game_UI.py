@@ -29,7 +29,7 @@ def game_world():
 				print('You are seeing a woman that is in black and with blood in her hands')
 				time.sleep(3)
 				print('Do you want to ask the woman or run')
-				
+		
 		else:
 			print('Goodbye!')
 			break
