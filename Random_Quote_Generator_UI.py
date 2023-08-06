@@ -34,20 +34,28 @@ quotes = '''“Act without expectation.” ~ Lao Tzu
 “One must be deeply aware of the impermanence of the world.”~ Dogen
 “Because we cannot accept the truth of transience, we suffer.” ~ Shunryu Suzuki'''.strip()
 
-quote_dic = {}
 quote_list = quotes.splitlines()
-random_quotes = list()
+quote_dic = {}
+used_quotes = list()
+
 for key, value in enumerate(quote_list, start=1):
-	quote_dic[value] = key
-print(quote_dic)
-while True:
-	enter = input('To generate a quote please press ENTER: ').strip()
-	
-	if enter == '':
-		for k, v in quote_dic.items():
-			list_word = quote_dic[k]
-			
-		random_word= random.choices(list_word)
-		print(random_word)
-	else:
-		print("Please just press enter!")
+	quote_dic[key] = value
+
+valid_quotes = list(quote_dic.keys())
+
+while len(valid_quotes) > 0:
+	try:
+		enter = input('Please press enter to get a quote: ').strip().lower()
+		key_random = random.choice(valid_quotes)
+		if enter == '':
+			random_quote = quote_dic[key_random]
+			print('Here is your quote:', random_quote)
+			valid_quotes.remove(key_random)
+			key_random = random.choice(valid_quotes)
+		elif enter == 'q' or enter == 'quit':
+			print('Goodbye!')
+			break
+	except IndexError:
+		print('Sorry this is all my quotes for today!')
+		break
+
