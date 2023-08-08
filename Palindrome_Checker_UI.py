@@ -1,6 +1,6 @@
-def user_word():#need to be  more complex
+def user_word():  # need to be more complex
 	while True:
-		word_ = input('Please isert here the word to see if is a Palindrome: ').strip().lower()
+		word_ = input('Please insert here the word to see if it is a Palindrome: ').strip().lower()
 		word2 = word_[::-1]
 		if word2 == word_:
 			print('This word is a palindrome!')
