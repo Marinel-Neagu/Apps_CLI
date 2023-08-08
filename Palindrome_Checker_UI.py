@@ -1,4 +1,4 @@
-def user_word():
+def user_word():#need to be  more complex
 	while True:
 		word_ = input('Please isert here the word to see if is a Palindrome: ').strip().lower()
 		word2 = word_[::-1]
