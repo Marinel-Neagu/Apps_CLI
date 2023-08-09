@@ -71,7 +71,7 @@ def user_choice():
 			if unit in list_unit:
 				return unit
 			else:
-				print('Please choose a number just from the list!')
+				print('Please choose a number just from the list_moves!')
 		elif unit == 'q' or unit == 'quit':
 			return unit
 		else:

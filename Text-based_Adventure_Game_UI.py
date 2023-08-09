@@ -1,6 +1,7 @@
 import time
 
-MOVES = ['left', 'right', 'forward', 'backward']
+MOVES_LR = ['left', 'right']
+MOVES_FB = ['forward', 'backward']
 YES = ['yes', 'y']
 NO = ['no', 'n', 'quit', 'q']
 
@@ -31,10 +32,10 @@ def loss():
 	print('Goodbye')
 
 
-def user_answer():
+def user_answer(list_moves):
 	while True:
 		user = input('Insert here your choice: ').strip().lower()
-		if user in MOVES:
+		if user in list_moves:
 			return user
 		else:
 			print('Please an insert a valid choice')
@@ -69,9 +70,8 @@ def left_door():
 
 
 def right_door():
-	print(
-		"You choose the right door, and you are seeing an angel, that is telling you that can give you 3 wished "
-		"if you are moving forward to her.")
+	print("You choose the right door, and you are seeing an angel, that is telling you that can give you 3 wished "
+	      "if you are moving forward to her.")
 	time.sleep(2)
 	print('You are looking at her and you are think if this is to nice to be true')
 	time.sleep(2)
@@ -96,17 +96,18 @@ def main():
 	start = start_game()
 	if start:
 		enter_house()
-		if user_answer() == 'left':
+		user_left_right = user_answer(MOVES_LR)
+		if user_left_right == 'left':
 			left_door()
-			left_answer = user_answer()
+			left_answer = user_answer(MOVES_FB)
 			if left_answer == 'forward':
 				treasure()
 				win()
 			elif left_answer == 'backward':
 				back()
-		elif user_answer() == 'right':
+		elif user_left_right == 'right':
 			right_door()
-			right_answer = user_answer()
+			right_answer = user_answer(MOVES_FB)
 			if right_answer == 'forward':
 				angel()
 				loss()

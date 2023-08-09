@@ -93,7 +93,7 @@ def mode():
     operation = None
     while not operation:
         try:
-            operation = int(input("Chose your operation, by typing a number from the list!: "))
+            operation = int(input("Chose your operation, by typing a number from the list_moves!: "))
 
             if operation == 1:
                 add(num1(), num2())
@@ -109,7 +109,7 @@ def mode():
                 square_root(num1())
 
             else:
-                print('You have to put a number from the list!')
+                print('You have to put a number from the list_moves!')
         except ValueError:
             print('You have to put a integer pls!')
 
@@ -129,7 +129,7 @@ def main():
                 print(f'Goodbye!')
                 break
             if choice == 1:
-                print('Press one number from the list below!')
+                print('Press one number from the list_moves below!')
                 print("Select operation:")
 
                 print(f'''

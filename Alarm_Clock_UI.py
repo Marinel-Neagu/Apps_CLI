@@ -9,7 +9,7 @@ RESET_FORMAT = '\033[0m'
 
 
 def title():
-    print(f''' Please choose from the list above:
+    print(f''' Please choose from the list_moves above:
                 1.Timer
                 2.Alarm-Clock
                 3.Clock
@@ -26,7 +26,7 @@ def mode():
             print('Goodbye, have a good day!')
             return clock_mode
         else:
-            print('Please choose form the list!')
+            print('Please choose form the list_moves!')
 
 
 def user_timer():

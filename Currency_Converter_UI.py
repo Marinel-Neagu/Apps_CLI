@@ -4,7 +4,7 @@ def currency1():
 		if cur1 in currency:
 			return cur1
 		else:
-			print('Please choose from the list!')
+			print('Please choose from the list_moves!')
 
 
 def currency2():
@@ -13,7 +13,7 @@ def currency2():
 		if cur2 in currency:
 			return cur2
 		else:
-			print('Please choose from the list!')
+			print('Please choose from the list_moves!')
 
 
 def amount():

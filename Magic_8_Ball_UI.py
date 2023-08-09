@@ -56,10 +56,10 @@ My sources say no
 Outlook not so good
 Very doubtful""".strip()
 	
-	# Generate a list of magic numbers
+	# Generate a list_moves of magic numbers
 	magic_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 	
-	# Split the multi-line string into a list of magic ball answers
+	# Split the multi-line string into a list_moves of magic ball answers
 	magic_ball_words = magic_ball_words.strip().splitlines()
 	
 	# Create a dictionary where magic numbers are keys and magic ball answers are values
