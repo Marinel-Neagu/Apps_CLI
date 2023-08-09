@@ -1,64 +1,122 @@
 import time
 
-'''
-the start of the game
-'''
+MOVES = ['left', 'right', 'forward', 'backward']
+YES = ['yes', 'y']
+NO = ['no', 'n', 'quit', 'q']
 
 
-def choice_checking_valid():
+def back():
+	print('You smell that someting is not ok with this, so you are running back.')
+	time.sleep(2)
+	print('You see a car, and guess what. Is one of your friend. And you go home')
+	time.sleep(2)
+	print('Goodbye!')
+
+
+def win():
+	print('You won the game and find the treasure, but you hear the an angel and try to run with the gold')
+	time.sleep(2)
+	print('You are still running and running, after a while you are hit by a car, and you try to get in.')
+	time.sleep(1)
+	print('The drive try to help you and he take away with him')
+	time.sleep(1)
+	print('Now you are fine, and happy. Goodbye')
+
+
+def loss():
+	print('You lost, you coult not escape.')
+	time.sleep(3)
+	print('You are being eaten by the angel, and sadly you die trying to pray!!!')
+	time.sleep(2)
+	print('Goodbye')
+
+
+def user_answer():
 	while True:
-		answer = input('Your choice is:').strip().lower()
-		if answer == ' ':
-			print('Please enter a answer, do not let this question emtpy!')
+		user = input('Insert here your choice: ').strip().lower()
+		if user in MOVES:
+			return user
 		else:
-			return answer
+			print('Please an insert a valid choice')
 
 
-def welcome():
-	print('Welcome, you are a new owner of a mysterious game named, “The dark soul.”')
-	time.sleep(2)
-	print('The game is from your grandpa, that died in a war that was almost 30 years ago.')
-	time.sleep(2)
-	print('Now the game that he made is in your hand!')
-	time.sleep(2)
-	print('You have to choose what to do it with! Or you give that game to your dad, or you open the game.')
-	player_welcome = choice_checking_valid()
-	time.sleep(2)
-	
-	return player_welcome
+def start_game():
+	valid_choice = YES + NO
+	print('Hello, do you want to play a text adventure game?')
+	while True:
+		user_start = input('Type yes or no, or to quit press q/quit:').strip().lower()
+		if user_start in valid_choice:
+			if user_start in YES:
+				return True
+			elif user_start in NO:
+				return False
 
 
-def enter_world():
-	game_welcome = welcome()
-	if game_welcome == 'open':
-		print('You are thrown away into a new world, you are now in the video game!')
-		time.sleep(3)
-		print('What are you doing now: Start cry or watching the surrounding?')
-		world_choice = choice_checking_valid()
-		if world_choice == 'cry' or world_choice == 'run':
-			print('You are now like a baby boy, and nothing is happening, but then ...')
-			time.sleep(3)
-			print('You are seeing a woman that is in black and with blood in her hands.')
-			time.sleep(3)
-			print('Do you want to ask the woman or run?')
-	elif game_welcome == 'throw away':
-		time.sleep(1)
-		print('You throw away the game, now you hear something from it....')
-		time.sleep(3)
-		print('The sound is coming form the game that you throw in trash can')
-		time.sleep(3)
-		print('And you see.... a black man with yellow eyes....')
-		time.sleep(2)
-		print('He is in a black coat, what are you gonna do?   ')
-		print('Are you gonna run to your dad or asking the man?')
+def enter_house():
+	print('You are in front of a house, and you see a door, and you enter the house, and you see two different doors.')
+	time.sleep(2)
+	print('The left door is very old and black, and the right one is new and very bright.')
+	time.sleep(2)
+
+
+def left_door():
+	print('You choose the left door, and you try to open it, but some bats are flying away from you.')
+	time.sleep(2)
+	print('You hear someone who is speaking in a wired language and he disperser.')
+	time.sleep(2)
+	print(
+		'Now, you see a weird thing, like something is dead. What are you going, are you moving forward or backward. ')
+
+
+def right_door():
+	print("You choose the right door, and you are seeing an angel, that is telling you that can give you 3 wished "
+	      "if you are moving forward to her.")
+	time.sleep(2)
+	print('You are looking at her and you are think if this is to nice to be true')
+	time.sleep(2)
+
+
+def treasure():
+	print('You are near the dead thing and you see that something shining.')
+	time.sleep(3)
+	print('IT IS A TREASURE, YOU GRAB IT AND YOU LEFT WITH IT')
+	time.sleep(3)
+
+
+def angel():
+	print('You are movign forward to the angel, but it is a trap....')
+	time.sleep(3)
+	print('The angel is not a good one, is a monster that eats people, and you are trying to escape. But it is '
+	      'useless')
+	time.sleep(2)
+
+
+def main():
+	start = start_game()
+	if start:
+		enter_house()
+		if user_answer() == 'left':
+			left_door()
+			left_answer = user_answer()
+			if left_answer == 'forward':
+				treasure()
+				win()
+			elif left_answer == 'backward':
+				back()
+		elif user_answer() == 'right':
+			right_door()
+			right_answer = user_answer()
+			if right_answer == 'forward':
+				angel()
+				loss()
+			elif right_answer == 'backward':
+				back()
+			else:
+				print('Please just insert forward or backward')
 	
 	else:
-		print('Goodbye!')
-
-
-def meet_the_characters():
-	print('ahhah')
+		print('Goodbye, have a nice day!')
 
 
 if __name__ == '__main__':
-	enter_world()
+	main()
