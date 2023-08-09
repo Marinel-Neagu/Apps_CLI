@@ -6,25 +6,25 @@ NO = ['no', 'n', 'quit', 'q']
 
 
 def back():
-	print('You smell that someting is not ok with this, so you are running back.')
+	print('You smell that something is not ok with this, so you are running back.')
 	time.sleep(2)
-	print('You see a car, and guess what. Is one of your friend. And you go home')
+	print('You see a car and guess what. Is one of your friends. And you go home.')
 	time.sleep(2)
 	print('Goodbye!')
 
 
 def win():
-	print('You won the game and find the treasure, but you hear the an angel and try to run with the gold')
+	print('You won the game and find the treasure, but you hear an angel and try to run with the gold.')
 	time.sleep(2)
 	print('You are still running and running, after a while you are hit by a car, and you try to get in.')
 	time.sleep(1)
-	print('The drive try to help you and he take away with him')
+	print('The drive tries to help you, and he takes away with him.')
 	time.sleep(1)
-	print('Now you are fine, and happy. Goodbye')
+	print('Now you are fine and happy. Goodbye')
 
 
 def loss():
-	print('You lost, you coult not escape.')
+	print('You lost, you could not escape.')
 	time.sleep(3)
 	print('You are being eaten by the angel, and sadly you die trying to pray!!!')
 	time.sleep(2)
@@ -62,15 +62,16 @@ def enter_house():
 def left_door():
 	print('You choose the left door, and you try to open it, but some bats are flying away from you.')
 	time.sleep(2)
-	print('You hear someone who is speaking in a wired language and he disperser.')
+	print('You hear someone who is speaking in a wired language, and he disperses.')
 	time.sleep(2)
 	print(
 		'Now, you see a weird thing, like something is dead. What are you going, are you moving forward or backward. ')
 
 
 def right_door():
-	print("You choose the right door, and you are seeing an angel, that is telling you that can give you 3 wished "
-	      "if you are moving forward to her.")
+	print(
+		"You choose the right door, and you are seeing an angel, that is telling you that can give you 3 wished "
+		"if you are moving forward to her.")
 	time.sleep(2)
 	print('You are looking at her and you are think if this is to nice to be true')
 	time.sleep(2)
@@ -84,10 +85,10 @@ def treasure():
 
 
 def angel():
-	print('You are movign forward to the angel, but it is a trap....')
+	print('You are moving forward to the angel, but it is a trap…')
 	time.sleep(3)
-	print('The angel is not a good one, is a monster that eats people, and you are trying to escape. But it is '
-	      'useless')
+	print(
+		'The angel is not a good one, is a monster that eats people, and you are trying to escape. But it is useless.')
 	time.sleep(2)
 
 
