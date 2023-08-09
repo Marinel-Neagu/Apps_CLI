@@ -73,14 +73,14 @@ def right_door():
 	print("You choose the right door, and you are seeing an angel, that is telling you that can give you 3 wished "
 	      "if you are moving forward to her.")
 	time.sleep(2)
-	print('You are looking at her and you are think if this is to nice to be true')
+	print('You are looking at her, and you are a think if this is too nice to be true.')
 	time.sleep(2)
 
 
 def treasure():
-	print('You are near the dead thing and you see that something shining.')
+	print('You are near the dead thing, and you see that something shining.')
 	time.sleep(3)
-	print('IT IS A TREASURE, YOU GRAB IT AND YOU LEFT WITH IT')
+	print('IT IS A TREASURE, YOU GRAB IT, AND YOU LEFT WITH IT.')
 	time.sleep(3)
 
 
