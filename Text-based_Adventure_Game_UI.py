@@ -103,7 +103,7 @@ def main():
 			if left_answer == 'forward':
 				treasure()
 				win()
-			elif left_answer == 'backward':
+			else:
 				back()
 		elif user_left_right == 'right':
 			right_door()
@@ -111,11 +111,8 @@ def main():
 			if right_answer == 'forward':
 				angel()
 				loss()
-			elif right_answer == 'backward':
-				back()
 			else:
-				print('Please just insert forward or backward')
-	
+				back()
 	else:
 		print('Goodbye, have a nice day!')
 
