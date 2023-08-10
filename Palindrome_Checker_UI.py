@@ -1,12 +1,14 @@
-def user_word():  # need to be more complex
-	while True:
-		word_ = input('Please insert here the word to see if it is a Palindrome: ').strip().lower()
-		word2 = word_[::-1]
-		if word2 == word_:
-			print('This word is a palindrome!')
-		else:
-			print('This is not a palindrome word!')
+import re
 
 
-if __name__ == '__main__':
-	user_word()
+def palindrome_checker(user_word):
+	clean_word = re.sub(r'[^a-zA0-9]', '', user_word)
+	clean_word = clean_word.lower()
+	return clean_word == clean_word[::-1]
+
+
+sentence = input('Please put a sentence, or a word to see is it a palindrome: ').strip()
+if palindrome_checker(sentence):
+	print('Wow, this is a palindrome word!')
+else:
+	print('Ops, this is not a palindrome word!')
