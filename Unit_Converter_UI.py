@@ -1,4 +1,4 @@
-# unit convertor, to choose to convert a unit to another unit
+# unit convertor, to choose to convert stack unit to another unit
 list_unit = (1, 2, 3)
 
 length_unit = {
@@ -62,7 +62,7 @@ def title():
 
 
 def user_choice():
-	print('Please insert a number from the table for converting!')
+	print('Please insert stack number from the table for converting!')
 	
 	while True:
 		unit = input(' Insert here or press q to quit:').strip().lower()
@@ -71,16 +71,16 @@ def user_choice():
 			if unit in list_unit:
 				return unit
 			else:
-				print('Please choose a number just from the list_moves!')
+				print('Please choose stack number just from the list_moves!')
 		elif unit == 'q' or unit == 'quit':
 			return unit
 		else:
-			print('Please choose a number from the table or press q to quit!')
+			print('Please choose stack number from the table or press q to quit!')
 
 
 def user_first_unit(list_unit):
 	while True:
-		unit = input('Please choose a unit: ')
+		unit = input('Please choose stack unit: ')
 		if unit in list_unit:
 			return unit
 		else:
@@ -89,7 +89,7 @@ def user_first_unit(list_unit):
 
 def user_second_unit(list_unit):
 	while True:
-		unit = input('Please choose a unit to transform to: ').strip()
+		unit = input('Please choose stack unit to transform to: ').strip()
 		if unit in list_unit:
 			return unit
 		else:
@@ -98,12 +98,12 @@ def user_second_unit(list_unit):
 
 def amount():
 	while True:
-		number = input('Please choose a amount:').strip()
+		number = input('Please choose stack amount:').strip()
 		if number.isdigit():
 			number = int(number)
 			return number
 		else:
-			print('Please put a number!')
+			print('Please put stack number!')
 
 
 def conversion_unit(number, unit1, unit2, unit_list):
@@ -148,7 +148,7 @@ def main():
 	exchange()
 	while True:
 		new_uit = input(
-			'Do you want to try a different unit? Press y/yes to continue or q/quit to not: ').strip().lower()
+			'Do you want to try stack different unit? Press y/yes to continue or q/quit to not: ').strip().lower()
 		if new_uit == 'y' or new_uit == 'yes':
 			exchange()
 		elif new_uit == 'q' or new_uit == 'quit':

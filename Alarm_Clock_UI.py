@@ -23,14 +23,14 @@ def mode():
             clock_mode = int(clock_mode)
             return clock_mode
         elif clock_mode == 'q' or clock_mode == 'quit':
-            print('Goodbye, have a good day!')
+            print('Goodbye, have stack good day!')
             return clock_mode
         else:
             print('Please choose form the list_moves!')
 
 
 def user_timer():
-    print(f'Insert  a time. Like(09:00) and to quit press "q" or "quit"')
+    print(f'Insert  stack time. Like(09:00) and to quit press "q" or "quit"')
 
     alarm = input('Insert...').strip()
     alarm_list = alarm.split(':')
@@ -47,7 +47,7 @@ def user_timer():
             print('Please insert correct hours and minutes! The hours should be less than 24 and minutes less '
                   'than 60')
     else:
-        print('Please you need to insert a valid hour, like 23:00:45.')
+        print('Please you need to insert stack valid hour, like 23:00:45.')
 
 
 def clock_timer():

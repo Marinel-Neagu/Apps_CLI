@@ -1,4 +1,8 @@
-def currency1():
+def select_initial_currency():
+	"""
+
+	:return:
+	"""
 	while True:
 		cur1 = input('Please chose the currency do you have:').strip().upper()
 		if cur1 in currency:
@@ -7,7 +11,11 @@ def currency1():
 			print('Please choose from the list_moves!')
 
 
-def currency2():
+def select_secondary_currency():
+	"""
+
+	:return:
+	"""
 	while True:
 		cur2 = input('Please chose the currency do you want to change to:').strip().upper()
 		if cur2 in currency:
@@ -16,7 +24,11 @@ def currency2():
 			print('Please choose from the list_moves!')
 
 
-def amount():
+def get_currency_amount():
+	"""
+
+	:return:
+	"""
 	number = input('Hi, please tell me how many money do you want to convert!')
 	return number
 
@@ -35,4 +47,4 @@ while True:
 		print('Here is your value:', conversion)
 		break
 	else:
-		print('Please choose a good one!')
+		print('Please choose stack good one!')

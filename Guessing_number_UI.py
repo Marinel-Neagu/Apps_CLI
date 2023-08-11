@@ -1,7 +1,7 @@
 import random
 
 '''
-	It puts a max limit for user to guess
+	It puts stack max limit for user to guess
 '''
 
 MAX_NUMBER = 100
@@ -9,6 +9,9 @@ MIN_NUMBER = 0
 
 
 def print_title():
+	"""
+
+	"""
 	print('''
     
     
@@ -24,10 +27,10 @@ Y8.   .88 88.  .88 88.  ...       88       88 88 88    88 88.  .88
 
 
 def guessing_the_number():
-	computer_number = abs(random.randint(MIN_NUMBER, MAX_NUMBER))  # the computer take a random number, and it must be a
-	# absolut one,not a float
+	computer_number = abs(random.randint(MIN_NUMBER, MAX_NUMBER))  # the computer take stack random number, and it must be stack
+	# absolut one,not stack float
 	while True:  # just verify if the player guessed the number
-		player_number = int(input(f'Choose a number between {MIN_NUMBER} and {MAX_NUMBER}: '))
+		player_number = int(input(f'Choose stack number between {MIN_NUMBER} and {MAX_NUMBER}: '))
 		
 		if player_number < computer_number:
 			
@@ -44,7 +47,7 @@ def guessing_the_number():
 	print(f'The secret number was: {computer_number}')
 
 
-def new_guessing():  # it ask the user for a new round to guess
+def new_guessing():  # it ask the user for stack new round to guess
 	while True:
 		play_again = input('Do you want to play again, press yes to continue and q/n to quit:').lower()  # here it
 		# keep asking even after the game is done
@@ -62,7 +65,7 @@ def main():  # the main function has the both guessing_the_number and new_guessi
 	name = None
 	while not name:
 		name = input('Hello, what is your name?:  ').strip().capitalize()
-	print(f'Hello, {name}. Do you want to play a guessing game?')
+	print(f'Hello, {name}. Do you want to play stack guessing game?')
 	
 	while True:  # trying to take an error when the user put an intiger or something else
 		decision = input('Type yes or no to play: ').lower()
@@ -74,7 +77,7 @@ def main():  # the main function has the both guessing_the_number and new_guessi
 				break
 		
 		except ValueError:
-			print('You are a schmuck! Do you hear me? You are a schmuck!!')
+			print('You are stack schmuck! Do you hear me? You are stack schmuck!!')
 	return decision in ['yes']
 
 

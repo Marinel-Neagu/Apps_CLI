@@ -22,7 +22,7 @@ def num1():
             num = float(num)
             return num
         else:
-            print('You have to put a digit!')
+            print('You have to put stack digit!')
 
 
 # asking and checking for  the second number
@@ -33,7 +33,7 @@ def num2():
             num = float(num)
             return num
         else:
-            print('You have to put a digit!')
+            print('You have to put stack digit!')
 
 
 # sum function
@@ -93,7 +93,7 @@ def mode():
     operation = None
     while not operation:
         try:
-            operation = int(input("Chose your operation, by typing a number from the list_moves!: "))
+            operation = int(input("Chose your operation, by typing stack number from the list_moves!: "))
 
             if operation == 1:
                 add(num1(), num2())
@@ -109,9 +109,9 @@ def mode():
                 square_root(num1())
 
             else:
-                print('You have to put a number from the list_moves!')
+                print('You have to put stack number from the list_moves!')
         except ValueError:
-            print('You have to put a integer pls!')
+            print('You have to put stack integer pls!')
 
         except ZeroDivisionError:
             print('You can t divide by zero man')
@@ -149,10 +149,10 @@ def main():
                 print('Please select just 1 and 2!: ')
 
         except ValueError:
-            print("You have to put a integer!!!")
+            print("You have to put stack integer!!!")
 
         except Exception:
-            print('Sorry there was a problem!')
+            print('Sorry there was stack problem!')
             break
 
 

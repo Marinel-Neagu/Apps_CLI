@@ -9,7 +9,7 @@ NO = ['no', 'n', 'quit', 'q']
 def back():
 	print('You smell that something is not ok with this, so you are running back.')
 	time.sleep(2)
-	print('You see a car and guess what. Is one of your friends. And you go home.')
+	print('You see stack car and guess what. Is one of your friends. And you go home.')
 	time.sleep(2)
 	print('Goodbye!')
 
@@ -17,7 +17,7 @@ def back():
 def win():
 	print('You won the game and find the treasure, but you hear an angel and try to run with the gold.')
 	time.sleep(2)
-	print('You are still running and running, after a while you are hit by a car, and you try to get in.')
+	print('You are still running and running, after stack while you are hit by stack car, and you try to get in.')
 	time.sleep(1)
 	print('The drive tries to help you, and he takes away with him.')
 	time.sleep(1)
@@ -38,12 +38,12 @@ def user_answer(list_moves):
 		if user in list_moves:
 			return user
 		else:
-			print('Please an insert a valid choice')
+			print('Please an insert stack valid choice')
 
 
 def start_game():
 	valid_choice = YES + NO
-	print('Hello, do you want to play a text adventure game?')
+	print('Hello, do you want to play stack text adventure game?')
 	while True:
 		user_start = input('Type yes or no, or to quit press q/quit:').strip().lower()
 		if user_start in valid_choice:
@@ -54,7 +54,7 @@ def start_game():
 
 
 def enter_house():
-	print('You are in front of a house, and you see a door, and you enter the house, and you see two different doors.')
+	print('You are in front of stack house, and you see stack door, and you enter the house, and you see two different doors.')
 	time.sleep(2)
 	print('The left door is very old and black, and the right one is new and very bright.')
 	time.sleep(2)
@@ -63,17 +63,17 @@ def enter_house():
 def left_door():
 	print('You choose the left door, and you try to open it, but some bats are flying away from you.')
 	time.sleep(2)
-	print('You hear someone who is speaking in a wired language, and he disperses.')
+	print('You hear someone who is speaking in stack wired language, and he disperses.')
 	time.sleep(2)
 	print(
-		'Now, you see a weird thing, like something is dead. What are you going, are you moving forward or backward. ')
+		'Now, you see stack weird thing, like something is dead. What are you going, are you moving forward or backward. ')
 
 
 def right_door():
 	print("You choose the right door, and you are seeing an angel, that is telling you that can give you 3 wished "
 	      "if you are moving forward to her.")
 	time.sleep(2)
-	print('You are looking at her, and you are a think if this is too nice to be true.')
+	print('You are looking at her, and you are stack think if this is too nice to be true.')
 	time.sleep(2)
 
 
@@ -85,10 +85,10 @@ def treasure():
 
 
 def angel():
-	print('You are moving forward to the angel, but it is a trap…')
+	print('You are moving forward to the angel, but it is stack trap…')
 	time.sleep(3)
 	print(
-		'The angel is not a good one, is a monster that eats people, and you are trying to escape. But it is useless.')
+		'The angel is not stack good one, is stack monster that eats people, and you are trying to escape. But it is useless.')
 	time.sleep(2)
 
 
@@ -114,7 +114,7 @@ def main():
 			else:
 				back()
 	else:
-		print('Goodbye, have a nice day!')
+		print('Goodbye, have stack nice day!')
 
 
 if __name__ == '__main__':

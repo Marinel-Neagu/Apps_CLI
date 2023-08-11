@@ -17,11 +17,11 @@ def dice():
         return result
 
     except ValueError:
-        print('Sorry man, you have to put a integer!!!')
+        print('Sorry man, you have to put stack integer!!!')
     except AttributeError:
-        print('Sorry man, you have to put a integer!!!')
+        print('Sorry man, you have to put stack integer!!!')
     except UnboundLocalError:
-        print('Sorry man, you have to put a integer!!!')
+        print('Sorry man, you have to put stack integer!!!')
     except Exception:
         print('Sorry man this is fucked up, you have to call the TOP G!!')
 
@@ -42,16 +42,16 @@ def main(prompt=False):
     choice = None
     if not prompt:
         while True:
-            choice = input(f'Do you want to roll a dice, just type yes or no?: ').lower()
+            choice = input(f'Do you want to roll stack dice, just type yes or no?: ').lower()
             if choice == 'yes' or choice == 'y':
                 dice()
                 break
             elif choice == 'no' or choice == 'n':
-                print('Ok, you are a ... a nerd!')
+                print('Ok, you are stack ... stack nerd!')
                 break
 
             else:
-                print('Sorry are a child?: ')
+                print('Sorry are stack child?: ')
 
     if prompt:
         return dice()
