@@ -17,10 +17,11 @@ def main():
 	"""
 		Take the pattern and the new word from the patterns' dictionary and print it out.
 	"""
-	initial_sentence = sentence()
+	user_sentence = sentence() # discord helped a lot :)
 	for key, value in patterns.items():
-		modified_sentence = re.sub(key, value, initial_sentence)
-	print('Here is your modified sentence:',modified_sentence)
+		user_sentence = re.sub(key, value, user_sentence)
+	print('Here is your modified sentence:', user_sentence)
+
 
 if __name__ == '__main__':
 	main()
