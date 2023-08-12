@@ -20,10 +20,10 @@ def hangman():
 	print(word_stage)
 	
 	while 0 <= lives < 7:
-		letter_player = input('Choose stack letter: ').strip().lower()
+		letter_player = input('Choose a letter: ').strip().lower()
 		
 		if letter_player not in string.ascii_letters:
-			print('Not stack letter, type again!!!')
+			print('Not a letter, type again!!!')
 			continue
 		
 		if letter_player in word_stage:

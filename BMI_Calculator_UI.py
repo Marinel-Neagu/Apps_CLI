@@ -16,7 +16,7 @@ def title():
 
 
 def hello():
-	name = input('What is you name: ').strip().capitalize()
+	name = input('What is your name: ').strip().capitalize()
 	print(f'Hello {name}. Do you want to see you BMI?')
 
 
@@ -33,7 +33,7 @@ def height():
 			if user_height_list[0].isdigit() and user_height_list[1]:
 				return user_height
 			else:
-				print('Please insert stack numbers not letters!')
+				print('Please insert a numbers not letters!')
 		
 		except IndexError:
 			print('Please insert your full height')
@@ -50,7 +50,7 @@ def weight():
 				return user_weight
 			
 			else:
-				print('Please insert stack numbers not letters!')
+				print('Please insert a numbers not letters!')
 		
 		except IndexError:
 			print('Please insert your full weight!')
@@ -79,7 +79,7 @@ def checking_BMI(user_bmi):
 	elif bmi >= 40:
 		print('You are dead man, how are you still alive. You have Morbidly Obese.')
 	else:
-		print('Sorry there is stack problem')
+		print('Sorry there is a problem')
 
 
 def main():

@@ -40,7 +40,7 @@ def start():
 
 
 def game_mode():
-	print('Do you want to play against stack player or stack computer?  ')
+	print('Do you want to play against a player or a computer?  ')
 	while True:
 		mode = input('''Please just press 1 for computer and 2 to play against another  player: ''')
 		if mode.isdigit():
@@ -50,7 +50,7 @@ def game_mode():
 			else:
 				print('Just type 1 or 2!')
 		else:
-			print('That is not stack number! Try again!')
+			print('That is not a number! Try again!')
 
 
 def board():
@@ -83,7 +83,7 @@ def first_player(matrix):
 			
 			else:
 				
-				print('Invalid number, please choose stack number form 0 to 9! ')
+				print('Invalid number, please choose a number form 0 to 9! ')
 		else:
 			
 			print('Invalid number! ')
@@ -106,7 +106,7 @@ def second_player(matrix):
 			
 			else:
 				
-				print('Invalid number, please choose stack number form 0 to 9! ')
+				print('Invalid number, please choose a number form 0 to 9! ')
 		else:
 			
 			print('Invalid number! ')
@@ -206,7 +206,7 @@ def player_vs_computer():
 					
 					break
 		else:
-			print('It is stack tie ')
+			print('It is a tie ')
 			break
 
 
@@ -258,7 +258,7 @@ def player_vs_player():
 				break
 		else:
 			
-			print('It is stack tie')
+			print('It is a tie')
 			
 			break
 

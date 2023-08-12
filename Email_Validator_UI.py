@@ -13,7 +13,7 @@ def email_user():
 
 def checking_email():
 	user_email = 'neagumarinel2014@gmail.com'
-	match = re.search('[stack-zA-Z0-9]', user_email)
+	match = re.search('[a-zA-Z0-9]', user_email)
 	if match:
 		print('This is good')
 		print(match.group())

@@ -28,7 +28,7 @@ def password_lenght():
 			length_pass = int(length_pass)
 			return length_pass
 		else:
-			print('Please insert stack number!')
+			print('Please insert a number!')
 
 
 # Function to input number of passwords
@@ -39,7 +39,7 @@ def password_amount():
 			numbers_of_passwords = int(numbers_of_passwords)
 			return numbers_of_passwords
 		else:
-			print('Please insert stack number!')
+			print('Please insert a number!')
 
 
 # Function to ask about adding upper case letters
@@ -66,14 +66,14 @@ def punctuation():
 	return choices(punctuations)
 
 
-# Function to generate stack new set of passwords
+# Function to generate a new set of passwords
 def new_password_generator():
 	while True:
-		new_pass = input('Do you need stack new set of passwords? Press yes to continue...')
+		new_pass = input('Do you need a new set of passwords? Press yes to continue...')
 		if new_pass in YES_CHOICE:
 			password_generator()
 		elif new_pass in NO_CHOICE:
-			print('Goodbye, have stack nice day!')
+			print('Goodbye, have a nice day!')
 			break
 		else:
 			print('Please, insert y or no!')
@@ -101,11 +101,11 @@ def password_generator():
 		print('________________________________________________________________________')
 		print('Your passwords are as follows:')
 		for i in range(amount):
-			# Generate stack random password by sampling characters from 'all_' with specified length
+			# Generate a random password by sampling characters from 'all_' with specified length
 			password = ''.join(random.sample(all_, length_password))
 			print(f'Password NO.{i + 1} =', password)
 	except ValueError:
-		print('Sorry, you need to choose stack password that is less than')
+		print('Sorry, you need to choose a password that is less than')
 
 if __name__ == '__main__':
 	password_generator()

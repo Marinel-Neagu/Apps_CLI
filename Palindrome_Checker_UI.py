@@ -2,15 +2,15 @@ import re
 
 
 def palindrome_checker(user_word):
-	clean_word = re.sub(r'[^stack-zA-Z0-9]', '', user_word)
+	clean_word = re.sub(r'[^a-zA-Z0-9]', '', user_word)
 	clean_word = clean_word.lower()
 	return clean_word == clean_word[::-1]
 
 
 while True:
 	
-	sentence = input('Please put stack sentence, or stack word to see is it stack palindrome: ').strip()
+	sentence = input('Please put a sentence, or a word to see is it a palindrome: ').strip()
 	if palindrome_checker(sentence):
-		print('Wow, this is stack palindrome word!')
+		print('Wow, this is a palindrome word!')
 	else:
-		print('Ops, this is not stack palindrome word!')
+		print('Ops, this is not a palindrome word!')

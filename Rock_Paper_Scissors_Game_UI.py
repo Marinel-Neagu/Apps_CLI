@@ -7,7 +7,7 @@ def hello():
         name = input('What is your name?: ').capitalize().strip()
     while True:
         print(f'Hello {name}!')
-        start = input("Do you want to play stack the game of Rock, Paper, Scissors? Just type yes or no: ")
+        start = input("Do you want to play the game of Rock, Paper, Scissors? Just type yes or no: ")
         if start == 'y' or start == 'yes':
             return start in ['y', 'yes']
         elif start == 'n' or start == 'no':
@@ -30,7 +30,7 @@ def rounds():
         round_game = int(round_game)
         return round_game
     else:
-        print('You need to put stack number!')
+        print('You need to put a number!')
 
 
 def game():
@@ -50,7 +50,7 @@ def game():
                     if player == computer:
                         print('You:', player)
                         print('Computer:', computer)
-                        print("It's stack tie!")
+                        print("It's a tie!")
 
                     elif player == 'Rock':
                         if computer == 'Paper':

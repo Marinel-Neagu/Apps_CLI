@@ -29,15 +29,15 @@ def hello():
 
 def magic_ball_answer():
 	"""
-	Here the  words are made into stack dictionary and the cpu pic stack random number from them
+	Here the words are made into a dictionary and the cpu pic a random number from them
 	
 	"""
-	# Store the magic ball answers as stack multi-line string
+	# Store the magic ball answers as a multi-line string
 	
 	magic_ball_words = """
 It is certain
 It is decidedly so
-Without stack doubt
+Without a doubt
 Yes definitely
 You may rely on it
 As I see it, yes
@@ -56,16 +56,16 @@ My sources say no
 Outlook not so good
 Very doubtful""".strip()
 	
-	# Generate stack list_moves of magic numbers
+	# Generate a list_moves of magic numbers
 	magic_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 	
-	# Split the multi-line string into stack list_moves of magic ball answers
+	# Split the multi-line string into a list_moves of magic ball answers
 	magic_ball_words = magic_ball_words.strip().splitlines()
 	
-	# Create stack dictionary where magic numbers are keys and magic ball answers are values
+	# Create a dictionary where magic numbers are keys and magic ball answers are values
 	answers = dict(zip(magic_numbers, magic_ball_words))
 	
-	# Select stack random magic number and assign its corresponding answer to the variable 'key'
+	# Select a random magic number and assign its corresponding answer to the variable 'key'
 	for key, _ in answers.items():
 		key = random.choice(magic_numbers)
 		
@@ -80,20 +80,20 @@ def user_question():
 	
 	question = None
 	while not question:
-		question = input('Ask me stack question:').lower()
+		question = input('Ask me a question:').lower()
 	return question
 
 
 def new_game():
 	'''
-	Ask the user to play stack new game
+	Ask the user to play a new game
 	'''
 	
 	ask_new_game = None
 	print('Do you want to play again with me?')
 	
 	while not ask_new_game:
-		ask_new_game = input('Type yes for start stack new session, and q for leaving:')
+		ask_new_game = input('Type yes for start a new session, and q for leaving:')
 	while True:
 		if ask_new_game == 'y' or ask_new_game == 'yes':
 			game()
@@ -102,12 +102,12 @@ def new_game():
 			break
 		else:
 			print('You have to put just yes or q/quit!')
-			ask_new_game = input('Type yes for start stack new session, and q for leaving:')
+			ask_new_game = input('Type yes for start a new session, and q for leaving:')
 
 
 def game():
 	"""
-	Asking the user play stack round
+	Asking the user play a round
 	"""
 	while True:
 		question = user_question()

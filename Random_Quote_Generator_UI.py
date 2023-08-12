@@ -7,13 +7,13 @@ quotes = '''“Act without expectation.” ~ Lao Tzu
 “Everything has beauty, but not everyone sees it.” ~ Confucius
 “I live by letting things happen.” ~ Dogen
 “If things go wrong, don't go with them.” ~ Roger Babson
-“If you know the enemy and know yourself, you need not fear the result of stack hundred battles.” — Sun Tzu
+“If you know the enemy and know yourself, you need not fear the result of a hundred battles.” — Sun Tzu
 “If you realize you have enough, you are truly rich.” ~ Lao Tzu
 “If you’re going through hell, keep going.” ~ Winston Churchill
 “Learn to be comfortable in adversity but most importantly, learn to be comfortable when you’re bored.” — Maxime Lagacé
 “Life shrinks or expands in proportion to one's courage.” ~ Anais Nin
 “Love is the absence of judgment.” ~ Dalai Lama
-“Mind is like stack mad monkey.” ~ Sathya Sai Baba
+“Mind is like a mad monkey.” ~ Sathya Sai Baba
 “Nature is full of chaos and conflict. Don't resist these things. Invite them in.” – Charlie Ambler
 “Nothing ever goes away until it has taught us what we need to know.” – Pema Chödrön
 “Rest and be kind, you don’t have to prove anything.” – Jack Kerouac
@@ -25,7 +25,7 @@ quotes = '''“Act without expectation.” ~ Lao Tzu
 “When you realize nothing is lacking, the world belongs to you.” – Lao Tzu
 “Wherever you are, it is the place you need to be.” – Maxime Lagacé
 “Smile, breathe and go slowly.” ~ Thich Nhat Hahn
-“Life is stack balance of holding on and letting go.” ~ Rumi
+“Life is a balance of holding on and letting go.” ~ Rumi
 “The most important point is to accept yourself and stand on your two feet.” ~ Shunryu Suzuki
 “Treat every moment as your last. It is not preparation for something else.” ~ Shunryu Suzuki
 “Self-realization is effortless. What you are trying to find is what you already are.”- Ramesh Balsekar
@@ -45,7 +45,7 @@ valid_quotes = list(quote_dic.keys())
 
 while len(valid_quotes) > 0:
 	try:
-		enter = input('Please press enter to get stack quote: ').strip().lower()
+		enter = input('Please press enter to get a quote: ').strip().lower()
 		key_random = random.choice(valid_quotes)
 		if enter == '':
 			random_quote = quote_dic[key_random]
