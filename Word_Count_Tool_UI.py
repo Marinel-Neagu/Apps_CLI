@@ -2,7 +2,7 @@ import time
 
 
 def user_accept():
-	print('Do you want to count words from a text file? Press y or q to quit. ')
+	print('Do you want to count words from a initial_text file? Press y or q to quit. ')
 	while True:
 		choice = input('Press here...').strip().lower()
 		if choice != '':
