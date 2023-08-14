@@ -3,7 +3,9 @@ import re
 patterns = {
 	r'\bfirst_name\b': 'Michel',
 	r'\blast_name\b': 'Jackson',
-	r'\bjob\b': 'Lazy Mann'}
+	r'\bjob_name\b': 'Lazy Mann',
+	r'\bjob\b': 'Lazy Mann',
+}
 
 
 def new_main():
