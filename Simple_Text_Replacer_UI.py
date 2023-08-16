@@ -1,9 +1,13 @@
+
 import re
 
 patterns = {
-	r'\bfirst_name\b': 'Michel',
-	r'\blast_name\b': 'Jackson',
-	r'\bjob\b': 'Lazy Mann'}
+	r'\bfirst_name\b': 'Marinel',
+	r'\blast_name\b': 'Neagu',
+	r'\bjob_name\b': 'programmer',
+	r'\bfood_name\b': 'pizza',
+	r'\bsister_name\b': 'Dory'
+}
 
 
 def new_main():
