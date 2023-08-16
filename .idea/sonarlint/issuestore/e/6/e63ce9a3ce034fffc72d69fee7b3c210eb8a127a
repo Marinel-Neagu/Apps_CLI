@@ -1,0 +1,6 @@
+
+bpython:S11924"JDefine a constant instead of duplicating this literal 'Computer:' 8 times.(¹ã±•
+fpython:S1192B"IDefine a constant instead of duplicating this literal 'You won!' 3 times.(œ®ÖÁüÿÿÿÿ
+gpython:S1192<"JDefine a constant instead of duplicating this literal 'You lost!' 3 times.(¶‹Ú£þÿÿÿÿ
+qpython:S3776$"TRefactor this function to reduce its Cognitive Complexity from 47 to the 15 allowed.(êâÁ÷úÿÿÿÿ
+Hpython:S5806*"+Rename this variable; it shadows a builtin.(Æ­êýÿÿÿÿ
