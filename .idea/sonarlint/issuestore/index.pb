@@ -37,5 +37,9 @@ O
 Text-based_Adventure_Game_UI.py,a\2\a2295b6b5c17ae6d3381feea53009fcab634460b
 G
 Anagram_Generator_UI.py,2\2\22519005d703f141bf0d684ee067557ed1cfb446
+H
+Whitespace_Remover_UI.py,2\a\2af6eb0e91f06d24e8fb187a2b20f75e232a0c77
+K
+Date_Format_Validator_UI.py,c\a\ca57415c1e504217eabde49c40cfa65795a2ed92
 E
 Word_Count_Tool_UI.py,5\5\555f0e250242d2a72ea10eca1214baa905524edc

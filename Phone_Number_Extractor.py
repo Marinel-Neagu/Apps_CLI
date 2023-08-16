@@ -1,7 +1,5 @@
 import re
 import time
-from time import sleep
-
 
 def name_document():
 	name = None
@@ -29,27 +27,29 @@ def read_document(document):
 def main():
 	while True:
 		print('Do you want to search into a document after some phone numbers?')
-		ask_user = input('Press here yes/y or n/no to quit. ')
+		ask_user = input('Press here yes/y or n/no to quit: ')
 		if ask_user in ['yes', 'y']:
-			
 			try:
 			
 				count = 0
 				user_document = name_document()
 				text = read_document(user_document)
 				text_clean = clean_text(text)
-				find_phone = phone_number(text_clean)
-				if find_phone:
+				find_phone_number = phone_number(text_clean)
+				if find_phone_number:
 					print('Here are the numbers that I find:')
 					time.sleep(3)
-					for i in find_phone:
+					for i in find_phone_number:
 						count += 1
 						print(f'Phone number {count}: {i} ')
 				else:
-					print('Sorry, there is not a single number in your document.')
+					print('Sorry, there is not a single phone number in your document.')
+			
 			except FileNotFoundError:
 				print('The name of the file is wrong or the file does not exist.')
-
+		else:
+			print('Goodbye!')
+			break
 
 if __name__ == '__main__':
 	main()
