@@ -25,13 +25,8 @@ def read_document_user(document):
 	return text_document
 
 
-# def clean_text(text):
-# 	clear = re.sub(r'/s+',' ',text)
-# 	return clear
-
 def email_pattern(document_text):
 	"""
-
 	:param document_text:
 	:return: email pattern using regex module
 	"""
