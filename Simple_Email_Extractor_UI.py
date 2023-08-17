@@ -54,8 +54,8 @@ def main():
 	"""
 This program just extracts all valid emails form a text
 	"""
-	try:
-		while True:
+	while True:
+		try:
 			num = 0
 			if new_email_request():
 				document_user = get_document_user()
@@ -69,8 +69,8 @@ This program just extracts all valid emails form a text
 			else:
 				print('Goodbye, and see you out there!')
 				break
-	except FileNotFoundError:
-		print('Sorry, the name or the file is not here.')
+		except FileNotFoundError:
+			print('Sorry, the name or the file is not here.')
 
 
 if __name__ == '__main__':
