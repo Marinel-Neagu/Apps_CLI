@@ -1,8 +1,13 @@
+
 import re
 
 
 def extract_date(date_text):
-	pattern = re.findall(r'\d{2}[./-]\d{2}[./-]+\d{4}|\d{4}[./-]\d{2}[./-]+\d{2}', date_text)
+	pattern = re.findall(r'\d{2}[./-_]\d{2}[./-_]+\d{4}'
+	                     r'|\d{4}[./-_]\d{2}[./-_]+\d{2}'
+	                     r'|\d{2}[\s.-_]+[a-zA-Z]{3,9}[\s._-]+\d{4}'
+	                     r'|[A-Z][a-z]+[\s.-_]+[0-9][a-zA-Z]{2}', date_text)
+	
 	return pattern
 
 
