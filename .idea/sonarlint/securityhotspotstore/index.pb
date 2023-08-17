@@ -85,3 +85,9 @@ Q.idea/sonarlint/securityhotspotstore/7/3/73a9f60f956108871a7f3b2c654f71efd3eb09
 Q.idea/sonarlint/securityhotspotstore/9/6/96373ce26fd6cc979891a6201e2f930c177781ea,6\f\6f19647f6058d790eb18bf7aebd742b7e860fa4c
 Å
 Q.idea/sonarlint/securityhotspotstore/8/e/8eaa3e4f86f171537be7cc18602545506175ea2a,1\c\1cba52076fa3576881e6a3fe2ea5a57907f434fd
+H
+Whitespace_Remover_UI.py,2\a\2af6eb0e91f06d24e8fb187a2b20f75e232a0c77
+E
+Email_Validator_UI.py,3\3\3328a301f79ea6122e94279e0aa12ca33494c7fe
+L
+Simple_Email_Extractor_UI.py,1\2\1210055de29fe7d66a55ac57ebbc1b5aff38e0ca

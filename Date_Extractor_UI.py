@@ -19,11 +19,40 @@ def get_user_document():
 	return user_document
 
 
-def main():
+def request():
+	new = None
+	while not new:
+		new = input("Do you want to a date form document, press y/yes or no/n to quit: ")
+	
+	return new in ['yes', 'y']
+
+
+def found_date():
 	user_document = get_user_document()
 	document = read_document(user_document)
 	date_extracted = extract_date(document)
-	print(date_extracted)
+	return date_extracted
+
+
+def main():
+	position = 0
+	while True:
+		try:
+			if request():
+				dates = found_date()
+				if dates:
+					print('Here are all the dates that I found!')
+					for date in dates:
+						position += 1
+						print(f'Date NO{position}: {date}')
+				else:
+					print('Sorry, I did not find something good here!')
+			else:
+				
+				print('Goodbye, see you out there!')
+				break
+		except FileNotFoundError:
+			print('This is not here')
 
 
 if __name__ == '__main__':
