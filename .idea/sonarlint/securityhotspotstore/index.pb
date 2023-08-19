@@ -64,8 +64,6 @@ G.idea/sonarlint/issuestore/a/2/a2295b6b5c17ae6d3381feea53009fcab634460b,6\3\63
 w
 G.idea/sonarlint/issuestore/1/c/1c947a841464c7003b42667635738e2a98860757,c\f\cf8d13896743e382574ca8ed2866e9a2ad2f7ecf
 Å
-Q.idea/sonarlint/securityhotspotstore/3/3/3328a301f79ea6122e94279e0aa12ca33494c7fe,4\5\45c8e6aed8433304ab9465815ba3fc9e891c5017
-Å
 Q.idea/sonarlint/securityhotspotstore/1/c/1c947a841464c7003b42667635738e2a98860757,3\f\3fbfedc637b366a0bb5bb7879ec2f3d53de2bcd7
 Å
 Q.idea/sonarlint/securityhotspotstore/2/2/22519005d703f141bf0d684ee067557ed1cfb446,3\8\38e7ebb391eb8cc2129e9cb3d7ba29b6e84609e9
@@ -89,5 +87,3 @@ H
 Whitespace_Remover_UI.py,2\a\2af6eb0e91f06d24e8fb187a2b20f75e232a0c77
 E
 Email_Validator_UI.py,3\3\3328a301f79ea6122e94279e0aa12ca33494c7fe
-L
-Simple_Email_Extractor_UI.py,1\2\1210055de29fe7d66a55ac57ebbc1b5aff38e0ca
