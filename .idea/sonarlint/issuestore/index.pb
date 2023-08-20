@@ -92,4 +92,16 @@ L
 G
 Simple_CSV_Parser_UI.py,9/6/9666cbb52923ef9b3912e9fb173a41b9d6fc1286
 D
-test_folder/test.txt,0/7/0777a292f71392016d64c23859772be98350e6a3
+test_folder/file.csv,5/a/5a1a0d51a32961488d228d57c7151dbe73c5932b
+h
+8test_folder/.idea/inspectionProfiles/Project_Default.xml,d/6/d621639024a0597dcb71144e3dd0f3f16e2842ce
+j
+:test_folder/.idea/inspectionProfiles/profiles_settings.xml,1/1/114bbea3c88c3b1e9de43ef4485ce64e65f88dec
+ç
+]test_folder/.idea/sonarlint/securityhotspotstore/a/b/abdde62d74437857e643d85dd32f2109fa780a6a,4/5/45f07c993477226d64a6c30684676c0dfa7e4a17
+ç
+]test_folder/.idea/sonarlint/securityhotspotstore/2/9/29fa1fe9d0923b53be02a4faf423a438bbd4cc20,6/2/6228b04c87b86b4cc91a62ac6ad95e9e4573004d
+É
+Stest_folder/.idea/sonarlint/issuestore/a/b/abdde62d74437857e643d85dd32f2109fa780a6a,a/8/a85a2eb27aff64c5829dac6d5db644197c02a81c
+É
+Stest_folder/.idea/sonarlint/issuestore/2/9/29fa1fe9d0923b53be02a4faf423a438bbd4cc20,2/7/2736e99bf39aa048a80a62c0dbe9be5c99fb0696
