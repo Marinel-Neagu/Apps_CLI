@@ -87,3 +87,7 @@ H
 Whitespace_Remover_UI.py,2\a\2af6eb0e91f06d24e8fb187a2b20f75e232a0c77
 E
 Email_Validator_UI.py,3\3\3328a301f79ea6122e94279e0aa12ca33494c7fe
+L
+Simple_Email_Extractor_UI.py,1/2/1210055de29fe7d66a55ac57ebbc1b5aff38e0ca
+G
+Simple_CSV_Parser_UI.py,9/6/9666cbb52923ef9b3912e9fb173a41b9d6fc1286
