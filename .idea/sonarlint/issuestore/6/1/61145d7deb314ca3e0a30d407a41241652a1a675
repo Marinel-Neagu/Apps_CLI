@@ -1,8 +1,0 @@
-
-ppython:S1192Q"YDefine a constant instead of duplicating this literal "Is not the correct type!" 3 times.(àáÂ#
-ppython:S1192O"SDefine a constant instead of duplicating this literal 'Not enough numbers' 3 times.(İĞÚÛşÿÿÿÿ
-ppython:S1192S"SDefine a constant instead of duplicating this literal 'Sorry this is bad!' 3 times.(àÅßşÿÿÿÿ
-bpython:S3457"EAdd replacement fields or use a normal string instead of an f-string.(×ô²´úÿÿÿÿ
-]python:S3457!"EAdd replacement fields or use a normal string instead of an f-string.(‚ˆ¨Ù
-bpython:S3457k"EAdd replacement fields or use a normal string instead of an f-string.(áˆ‚şÿÿÿÿ
-]python:S3457p"EAdd replacement fields or use a normal string instead of an f-string.(¬âäç
