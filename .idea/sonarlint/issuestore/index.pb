@@ -35,10 +35,6 @@ G
 Anagram_Generator_UI.py,2\2\22519005d703f141bf0d684ee067557ed1cfb446
 K
 Date_Format_Validator_UI.py,c\a\ca57415c1e504217eabde49c40cfa65795a2ed92
-E
-Word_Count_Tool_UI.py,5\5\555f0e250242d2a72ea10eca1214baa905524edc
-I
-Phone_Number_Extractor.py,0\4\0458d1c52cf8e33a5f6ce6e43815ccc2a62ca970
 w
 G.idea/sonarlint/issuestore/d/7/d7ed8d4fc5eac38b4a531543e5ab9523c80e86a6,f\5\f514844f27b248f1e0972d676c00d9edc1484e18
 Å
