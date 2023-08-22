@@ -1,25 +1,13 @@
-
 import time
+
 import requests
 from bs4 import BeautifulSoup
-
-
-def title():
-	"""
-Print the ASCII Title
-	"""
-	print('''
-		888b. 8888 Yb  dP
-		8   8 8www  YbdP
-		8   8 8     dPYb
-		888P' 8888 dP  Yb
-		''')
 
 
 def get_user_word():
 	user_sentence = None
 	while not user_sentence:
-		user_sentence = input('Please insert here a word or a sentence that you want to know about: ').strip()
+		user_sentence = input('Please insert here a word, or a sentence that you want to know about: ').strip()
 	return user_sentence
 
 
@@ -55,13 +43,12 @@ def show_definiton():
 		user_word = get_user_word()
 		site = site_source(user_word)
 		definition = get_definition(site)
-		print(definition)
+		print('Definitia este:', definition.strip())
 	except AttributeError:
 		print('Sorry this word is not in my dex :(')
 
 
 def main():
-	title()
 	request_site_status()
 	while True:
 		if ask_user():
