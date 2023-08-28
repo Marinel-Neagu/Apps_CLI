@@ -24,7 +24,6 @@ def site_source(user_word):
 	soup_site = BeautifulSoup(source, 'lxml')
 	return soup_site
 
-
 def get_definition(site):
 	definition = site.find('span', class_='def html').text
 	return definition
