@@ -75,40 +75,35 @@ def new_choice():
 	return new in ['yes', 'y']
 
 
-def new_main():
-	if new_choice():
-		main()
-	else:
-		print('Goodbye')
+def show_calendar():
+	print_title()
+	print_panel()
+	choice = valid_choice()
+	while True:
+		try:
+			match choice:
+				case 1:
+					year_calendar(year=int(year_user()))
+				case 2:
+					month_calendar(month=int(month_user()), year=int(year_user()))
+				case 3:
+					break
+				case _:
+					print('Invalid number!')
+		except ValueError:
+			print('It has to be a number')
+		except IndexError:
+			print('It has to be a valid month,so you have to write a number form 1 to 12')
 
 
 def main():
-	print_title()
-	print_panel()
-	try:
-		user = valid_choice()
-		match user:
-			case 1:
-				year_calendar(year=int(year_user()))
-			case 2:
-				month_calendar(month=int(month_user()), year=int(year_user()))
-			case 3:
-				print('Goodbye')
-			
-			case _:
-				print('Invalid number!')
-	except ValueError:
-		print('It has to be a number')
-	except IndexError:
-		print('It has to be a valid month,so you have to write a number form 1 to 12')
-		month_user()
-
-
-if __name__ == '__main__':
 	while True:
-		if ask_user():
-			main()
-			new_main()
+		if new_choice():
+			show_calendar()
 		else:
 			print('Goodbye')
 			break
+
+
+if __name__ == '__main__':
+	main()
