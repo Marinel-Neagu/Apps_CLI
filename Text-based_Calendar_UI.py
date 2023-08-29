@@ -99,6 +99,9 @@ def main():
 				print('Invalid number!')
 	except ValueError:
 		print('It has to be a number')
+	except IndexError:
+		print('It has to be a valid month,so you have to write a number form 1 to 12')
+		month_user()
 
 
 if __name__ == '__main__':
