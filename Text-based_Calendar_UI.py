@@ -84,8 +84,10 @@ def show_calendar():
 			match choice:
 				case 1:
 					year_calendar(year=int(year_user()))
+					break
 				case 2:
 					month_calendar(month=int(month_user()), year=int(year_user()))
+					break
 				case 3:
 					break
 				case _:
