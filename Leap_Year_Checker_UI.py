@@ -15,7 +15,7 @@ def check_leap_year(year):
 def user_choice():
 	user_input = None
 	while not user_input:
-		user_input = input('Types yes to find a file size or n/no to quit: ').strip().lower()
+		user_input = input('Type yes to check a year if it is a leap year or n/no to quit: ').strip().lower()
 	return user_input in ['yes', 'y']
 
 
