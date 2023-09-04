@@ -12,7 +12,7 @@ def panel():
 	print('''
 	Press:
 		1. Translate a text to Morse code.
-		2. Translate a Morso code to plain text.
+		2. Translate a Morse code to plain text.
 		3. To quit!
 	''')
 
@@ -51,8 +51,8 @@ def morse_to_text(morse):
 			space_tracking += 1
 		else:
 			word_morse += symbol
-	if space_tracking % 2 == 0 and word_morse:
-		text_translated += morse_to_text_dic.get(word_morse, '!')
+		if space_tracking % 2 == 0 and word_morse:
+			text_translated += morse_to_text_dic.get(word_morse, '!')
 	print(text_translated)
 
 
@@ -71,7 +71,7 @@ def main():
 					print('Goodbye')
 					break
 				case _:
-					print('Sorry, this is a invalid choices!')
+					print('Sorry, this is an invalid choice!')
 	except Exception:
 		print('Please try to not scream!')
 
