@@ -1,4 +1,5 @@
 import random
+import os
 
 
 def name_boy_list():
@@ -59,31 +60,116 @@ def name_girl_list():
 	:return:list of the most popular girl name in English
 	"""
 	list_of_name = [
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	]
+		
+		'Olivia', 'Emma', 'Charlotte', 'Amelia', 'Sophia', 'Isabella', 'Ava', 'Mia', 'Evelyn', 'Luna', 'Harper',
+		'Camila', 'Sofia', 'Scarlett', 'Elizabeth', 'Eleanor', 'Emily', 'Chloe', 'Mila', 'Violet', 'Penelope', 'Aria',
+		'Abigail', 'Ella', 'Avery', 'Hazel', 'Nora', 'Layla', 'Lily', 'Aurora', 'Nova', 'Ellie', 'Madison', 'Grace',
+		'Isla', 'Willow', 'Zoe', 'Riley', 'Stella', 'Eliana', 'Ivy', 'Victoria', 'Emilia', 'Zoey', 'Naomi', 'Hannah',
+		'Lucy', 'Elena', 'Lillian', 'Maya', 'Leah', 'Paisley', 'Addison', 'Natalie', 'Valentina', 'Everly', 'Delilah',
+		'Leilani', 'Madelyn', 'Kinsley', 'Ruby', 'Sophie', 'Alice', 'Genesis', 'Claire', 'Audrey', 'Sadie', 'Aaliyah',
+		'Josephine', 'Autumn', 'Brooklyn', 'Quinn', 'Kennedy', 'Cora', 'Savannah', 'Caroline', 'Athena', 'Natalia',
+		'Hailey', 'Aubrey', 'Emery', 'Anna', 'Iris', 'Bella', 'Eloise', 'Skylar', 'Jade', 'Gabriella', 'Ariana',
+		'Maria', 'Adeline', 'Lydia', 'Sarah', 'Gianna']
 	random_name = random.choice(list_of_name)
 	return random_name
+
+
+def title():
+	print('''
+	
+	
+	
+	
+	''')
+
+
+def user_choice():
+	print('Hello, do you want to generat a random name, press yes/y or no/n to quit')
+	input_user = None
+	while not input_user:
+		input_user = input('Press here: ').strip().lower()
+	return input_user in ['yes', 'y']
+
+
+def print_panel():
+	print('''
+		1. Generate a simple name
+		2. Generate a surname name
+		3. Generate a full name
+	''')
+
+
+def get_user_number():
+	print('Please choose a number from the panel!')
+	while True:
+		number = input('Insert here the number: ').strip()
+		if number.isdigit():
+			number = int(number)
+			if number in range(1, 4):
+				return number
+			else:
+				print('Please choose a number from the panel! ')
+		else:
+			print('Please choose a number!')
+
+
+def gender():
+	print('Firstly, tell me what gender you are looking for. Type boy or girl.')
+	while True:
+		input_user = input('Insert here: ').strip().lower()
+		if input_user in ['boy', 'girl']:
+			return input_user
+		else:
+			print('Please type boy or girl')
+
+
+def boy():
+	print_panel()
+	number = get_user_number()
+	match number:
+		case 1:
+			print(f'Here is your name for the boy: {name_boy_list()}')
+		case 2:
+			print(f'Here is your surname for the boy: {surname_list()}')
+		
+		case 3:
+			print(f'Here is your full name for the boy: {name_boy_list()} {surname_list()}')
+
+
+def girl():
+	print_panel()
+	number = get_user_number()
+	match number:
+		case 1:
+			print(f'Here is your name for the girl: {name_girl_list()}')
+		case 2:
+			print(f'Here is your surname for the girl: {surname_list()}')
+		
+		case 3:
+			print(f'Here is your full name for the girl: {name_girl_list()} {surname_list()}')
+
+
+def show_name():
+	name_gender = gender()
+	match name_gender:
+		case 'boy':
+			boy()
+		case 'girl':
+			girl()
+
+
+def main():
+	choice = user_choice()
+	while True:
+		if choice:
+			show_name()
+			new = input('Do you want to generate a new name?').strip().lower()
+			if new in ['yes', 'y']:
+				show_name()
+		else:
+			print('Goodbye')
+			break
+
+
+if __name__ == '__main__':
+	main()
