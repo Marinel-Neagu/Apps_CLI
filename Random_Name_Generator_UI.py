@@ -163,9 +163,12 @@ def main():
 	while True:
 		if choice:
 			show_name()
-			new = input('Do you want to generate a new name?').strip().lower()
+			new = input('Do you want to generate a new name?: ').strip().lower()
 			if new in ['yes', 'y']:
 				show_name()
+			else:
+				print('Goodbye')
+				break
 		else:
 			print('Goodbye')
 			break
