@@ -1,6 +1,25 @@
-
 import datetime
+
 import random
+
+
+def show_panel():
+	print('''
+1. Show balance
+2. Deposit
+3. Withdraw
+4. Show user
+	''')
+
+
+def user_amount():
+	while True:
+		amount = input('Insert here the money: ').strip()
+		if amount.isdigit():
+			amount = int(amount)
+			return amount
+		else:
+			print('Please put a number!')
 
 
 def name_user():
@@ -13,15 +32,16 @@ def name_user():
 def type_account():
 	print('''
 	Premium Account-price = 999.99 lei
-	Classic Account-price = 69.99 lei''')
+	ClassicAccount Account-price = 69.99 lei''')
 	while True:
-		ask_user = input('Do you want to buy a Classic or Premium account? Write classic or premium: ').strip().lower()
+		ask_user = input(
+			'Do you want to buy a ClassicAccount or Premium account? Write classic or premium: ').strip().lower()
 		if ask_user in ['classic', 'premium']:
 			match ask_user:
 				case 'classic':
-					return False
+					return 'Classic'
 				case 'premium':
-					return True
+					return 'Premium'
 				case _:
 					print('Invalid option')
 
@@ -52,11 +72,11 @@ def money():
 
 
 class Bank:
-	def __init__(self, rate=19):
+	def __init__(self, name, account, rate=19,money):
 		self.rate = rate / 100
-		self.name = name_user()
-		self.type_account = type_account()
-		self.money = money()
+		self.name = name
+		self.type_account = account
+		self.money = money
 		self.date_of_birth = date_of_birth()
 		self.id = random.choice(range(123435))
 	
@@ -65,7 +85,8 @@ class Bank:
 		Name: {self.name}
 		Date of birth:{self.date_of_birth}
 		Money in deposit:{self.money}
-		
+		Type of account: {self.type_account}
+		Rate: {self.rate}
 		''')
 	
 	def check_balance(self):
@@ -87,7 +108,7 @@ class PremiumAccount(Bank):
 	def withdraw(self, amount):
 		self.money -= amount if amount > 0 else print('The amount must be greater than 0')
 		print(f'You withdraw from your bank account {self.money}')
-
+	
 	def show_benefits(self):
 		print('''
 		1. No fee taxes
@@ -95,18 +116,37 @@ class PremiumAccount(Bank):
 		3. Custom name
 		4. Customer support
 		''')
-class Classic(Bank):
+
+
+class ClassicAccount(Bank):
 	def show_benefists(self):
 		print('''
-		1. No fee taxes
-		2. No fee taxes for exchange
-		3. Custom name
+		1. You are just a simple human
+		2. You are not a king brush
+		3. You so poor
 		4. Customer support
 		''')
 
+
 def main():
-	while True:
+	show_panel()
+	try:
+		while True:
+			user_input = input('Press a number from the panel')
+			premium_account = PremiumAccount()
+			match user_input:
+				case '1':
+					premium_account.check_balance()
+				case '2':
+					premium_account.deposit(amount=user_amount())
+				case '3':
+					premium_account.show_user()
+				case '4':
+					premium_account.show_benefits()
 	
+	
+	except Exception:
+		pass
 
 
 if __name__ == '__main__':
