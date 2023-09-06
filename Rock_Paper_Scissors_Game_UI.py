@@ -7,7 +7,7 @@ def hello():
         name = input('What is your name?: ').capitalize().strip()
     while True:
         print(f'Hello {name}!')
-        start = input("Do you want to play the game of Rock, Paper, Scissors? Just type yes or no: ")
+        start = input("Do you want to play the game of Rock, Paper, Scissors? Just type_account yes or no: ")
         if start == 'y' or start == 'yes':
             return start in ['y', 'yes']
         elif start == 'n' or start == 'no':

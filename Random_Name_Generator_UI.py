@@ -120,7 +120,7 @@ def gender():
 		if input_user in ['boy', 'girl']:
 			return input_user
 		else:
-			print('Please type boy or girl')
+			print('Please type_account boy or girl')
 
 
 def boy():

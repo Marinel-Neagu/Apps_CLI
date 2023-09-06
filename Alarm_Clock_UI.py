@@ -76,7 +76,7 @@ def clock_timer():
 	except IndexError:
 		print('Not enough numbers')
 	except TypeError:
-		print("Is not the correct type!")
+		print("Is not the correct type_account!")
 	except Exception:
 		print('Sorry this is bad!')
 
@@ -108,7 +108,7 @@ def clock_alarm():
 	except IndexError:
 		print('Not enough numbers')
 	except TypeError:
-		print("Is not the correct type!")
+		print("Is not the correct type_account!")
 	except Exception:
 		print('Sorry this is bad!')
 
@@ -126,7 +126,7 @@ def clock():
 	except IndexError:
 		print('Not enough numbers')
 	except TypeError:
-		print("Is not the correct type!")
+		print("Is not the correct type_account!")
 	except Exception:
 		print('Sorry this is bad!')
 

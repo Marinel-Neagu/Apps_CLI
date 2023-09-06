@@ -23,11 +23,11 @@ def hangman():
 		letter_player = input('Choose a letter: ').strip().lower()
 		
 		if letter_player not in string.ascii_letters:
-			print('Not a letter, type again!!!')
+			print('Not a letter, type_account again!!!')
 			continue
 		
 		if letter_player in word_stage:
-			print('You have already guessed that letter. Just type again!', end=' ')
+			print('You have already guessed that letter. Just type_account again!', end=' ')
 			guessed.append(letter_player)
 			print('Letter guessed by you:', ' '.join(guessed).capitalize())
 			print(word_stage)
@@ -61,14 +61,14 @@ def main():
 	choice = input('Do you want to play hangman? Type y/n: ').strip().lower()
 	
 	while choice not in ['yes', 'y', 'n', 'no']:
-		choice = input('Please just type y/n: ').strip().lower()
+		choice = input('Please just type_account y/n: ').strip().lower()
 	
 	if choice == 'y' or choice == 'yes':
 		hangman()
 	elif choice == 'n' or choice == 'no':
 		print('Goodbye! Cya!')
 	else:
-		choice = input('Just type yes or no, man!')
+		choice = input('Just type_account yes or no, man!')
 
 
 if __name__ == '__main__':

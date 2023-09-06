@@ -48,7 +48,7 @@ def game_mode():
 			if mode == 1 or mode == 2:
 				return mode
 			else:
-				print('Just type 1 or 2!')
+				print('Just type_account 1 or 2!')
 		else:
 			print('That is not a number! Try again!')
 

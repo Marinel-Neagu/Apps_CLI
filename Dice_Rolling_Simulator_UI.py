@@ -33,14 +33,14 @@ def new_game():
             print('I hoped it worked,you nerdy dude!')
             break
         else:
-            print('Sorry man, just type yes or no: ')
+            print('Sorry man, just type_account yes or no: ')
 
 
 def main(prompt=False):
     choice = None
     if not prompt:
         while True:
-            choice = input(f'Do you want to roll a dice, just type yes or no?: ').lower()
+            choice = input(f'Do you want to roll a dice, just type_account yes or no?: ').lower()
             if choice == 'yes' or choice == 'y':
                 dice()
                 break
