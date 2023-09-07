@@ -27,13 +27,18 @@ def sentence_user():
 
 
 def main():
+	print('To quit insert quit below or just continue to use the program.')
 	while True:
 		sentence = sentence_user()
-		counting = CountVowelsConsonants(sentence=sentence)
-		print(f'''
-		Total consonants: {counting.count_consonants()}
-		Total vowels: {counting.count_vowels()}
-		''')
+		if sentence != 'quit':
+			counting = CountVowelsConsonants(sentence=sentence)
+			print(f'''
+			Total consonants: {counting.count_consonants()}
+			Total vowels: {counting.count_vowels()}
+			''')
+		else:
+			print('Goodbye!')
+			break
 
 
 if __name__ == '__main__':
