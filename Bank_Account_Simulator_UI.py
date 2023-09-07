@@ -64,13 +64,6 @@ def birth_user():
 			print('Invalid date! Try again!!')
 
 
-def money_user():
-	user_money = input('Do you want deposit money in your first account? Type yes/y or no/n: ')
-	if user_money in ['yes', 'y']:
-		money_account = input('How much do you want to put in this account: ').strip()
-		return int(money_account) if money_account.isdigit() else print('Sorry you need to put a number! ')
-
-
 class Bank:
 	id = 'UGLIFYJS78JJ'
 	
@@ -137,48 +130,31 @@ class ClassicAccount(Bank):
 def main():
 	name = name_user()
 	date_of_birth = birth_user()
-	money = money_user()
 	account = type_account_user()
+	if account == 'Premium':
+		bank_account = PremiumAccount(money=0, date_of_birth=date_of_birth, name=name, account=account)
+	else:
+		bank_account = ClassicAccount(money=0, date_of_birth=date_of_birth, name=name, account=account)
+	
 	show_panel()
 	try:
 		while True:
 			user_input = input('Press a number from the panel: ').strip()
-			if account == 'Premium':
-				premium_account = PremiumAccount(money=money, date_of_birth=date_of_birth, name=name, account=account)
-				match user_input:
-					case '1':
-						premium_account.info_user()
-					case '2':
-						premium_account.check_balance()
-					case '3':
-						premium_account.deposit(amount=user_amount())
-					case '4':
-						premium_account.withdraw(amount=user_amount())
-					case '5':
-						premium_account.benefits_user()
-					case '6':
-						show_panel()
-					case '7':
-						sys.exit('Goodbye')
-			else:
-				classic_account = ClassicAccount(money=money, date_of_birth=date_of_birth, name=name, account=account)
-				match user_input:
-					case '1':
-						classic_account.info_user()
-					case '2':
-						classic_account.check_balance()
-					case '3':
-						classic_account.deposit(amount=user_amount())
-					case '4':
-						classic_account.withdraw(amount=user_amount())
-					case '5':
-						classic_account.benefits_user()
-					case '6':
-						show_panel()
-					case '7':
-						sys.exit('Goodbye')
-	
-	
+			match user_input:
+				case '1':
+					bank_account.info_user()
+				case '2':
+					bank_account.check_balance()
+				case '3':
+					bank_account.deposit(amount=user_amount())
+				case '4':
+					bank_account.withdraw(amount=user_amount())
+				case '5':
+					bank_account.benefits_user()
+				case '6':
+					show_panel()
+				case '7':
+					sys.exit('Goodbye')
 	
 	except Exception:
 		print('Sorry you need to try again ')
