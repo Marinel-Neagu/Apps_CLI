@@ -10,7 +10,7 @@ def show_panel():
 4. Withdraw
 5. Benefits.
 6. Show panel
-7. Exit Bank Simulator
+7. Exit Bank Simulator.
 	''')
 
 
@@ -54,7 +54,7 @@ def birth_user():
 		try:
 			user_year = input('In what year did you born?: ').strip()
 			user_month = input('In what month did you born?: ').strip()
-			user_day = input('In what day did you born?: ').strip()
+			user_day = input('On what day did you born?: ').strip()
 			if datetime.datetime(year=int(user_year), month=int(user_month), day=int(user_day)):
 				birth = f'{user_day}.{user_month}.{user_year}'
 				return birth
@@ -156,7 +156,7 @@ def main():
 				case '7':
 					sys.exit('Goodbye')
 	
-	except Exception:
+	except ValueError:
 		print('Sorry you need to try again ')
 
 
