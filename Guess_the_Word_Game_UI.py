@@ -8,8 +8,6 @@ class GuessWord:
 		self.list_words = list_words
 		self.random_word = self.word()
 
-	def print_game(self):
-		print("_ " * len(self.random_word))
 	
 	def word(self):
 		word = random.choice(self.list_words)
@@ -36,7 +34,7 @@ class GuessWord:
 	
 	def check_answer(self):
 		while self.lives > 0:
-			self.print_game()
+			print("_ " * len(self.random_word))
 			self.answer = self.get_user_answer()
 			if self.answer == self.random_word:
 				print('A good job!')
