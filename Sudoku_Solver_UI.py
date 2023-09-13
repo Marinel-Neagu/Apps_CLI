@@ -11,9 +11,9 @@ def print_board(board):
 			if column % 3 == 0 and column != 0:
 				print("|", end=' ')
 			if column == 8:
-				print(board[row][column])
+				print(str(board[row][column]))
 			else:
-				print(board[row][column], end=' ')
+				print(str(board[row][column]), end=' ')
 
 
 def find_empty(board):
@@ -37,21 +37,31 @@ def valid_board(board, number, empty_position):
 	box_column = empty_position[0] // 3
 	for row in range(box_row * 3, box_row * 3 + 3):
 		for column in range(box_column * 3, box_column * 3 + 3):
-			if board[row][column] == number:
+			if board[row][column] == number and empty_position != (row, column):
 				return False
 	return None
 
+
 def solve(board):
+	
+	
 	find = find_empty(board)
-	if find:
-		return True
-	else:
-		row,column =find
-		re
+if find:
+	return True
+else:
+	row, column = find
+
+for symbol in range(0, 10):
+	if valid_board(board=board, number=symbol, empty_position=find):
+		if solve(board):
+			return True
+		else:
+			board[row][column] = 0
+return False
 
 
 def main():
-	print_board(GRID)
+	print_board(solve(GRID))
 
 
 if __name__ == '__main__':
