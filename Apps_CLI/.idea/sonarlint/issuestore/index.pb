@@ -63,3 +63,5 @@ Q.idea/sonarlint/securityhotspotstore/4/2/42247884cf31ae5632c12c010d1d9d7b554433
 Q.idea/sonarlint/securityhotspotstore/d/7/d7ed8d4fc5eac38b4a531543e5ab9523c80e86a6,5\3\53706d7c70c40914362d8e191edd1b7cf12fb73f
 w
 G.idea/sonarlint/issuestore/6/2/62f62b397c6e3a06640a8889d6e59e8b14071c45,7\d\7d8e4b819e313eda9d23519470bb95b4b7fb8b69
+G
+Anagram_Generator_UI.py,2\2\22519005d703f141bf0d684ee067557ed1cfb446

@@ -3,18 +3,18 @@ from ansi_code import GREEN, BOLD, RED, RESET
 
 def title():
 	print(
-		'''
-		
-					888888b.   888b     d888 8888888
-					888  "88b  8888b   d8888   888
-					888  .88P  88888b.d88888   888
-					8888888K.  888Y88888P888   888
-					888  "Y88b 888 Y888P 888   888
-					888    888 888  Y8P  888   888
-					888   d88P 888   "   888   888
-					8888888P"  888       888 8888888
-		'''
-		)
+			'''
+			
+						888888b.   888b     d888 8888888
+						888  "88b  8888b   d8888   888
+						888  .88P  88888b.d88888   888
+						8888888K.  888Y88888P888   888
+						888  "Y88b 888 Y888P 888   888
+						888    888 888  Y8P  888   888
+						888   d88P 888   "   888   888
+						8888888P"  888       888 8888888
+			'''
+			)
 
 
 def hello():
@@ -30,7 +30,7 @@ def ask_for_bmi_calculation():
 def height():
 	while True:
 		try:
-			user_height = input("Please tell me your height in meters: ").strip()
+			user_height = input("Please put your height in meters: ").strip()
 			user_height_list = user_height.split('.')
 			if user_height_list[0].isdigit() and user_height_list[1]:
 				return user_height
