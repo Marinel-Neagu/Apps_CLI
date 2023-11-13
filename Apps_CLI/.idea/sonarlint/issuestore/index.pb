@@ -65,3 +65,7 @@ w
 G.idea/sonarlint/issuestore/6/2/62f62b397c6e3a06640a8889d6e59e8b14071c45,7\d\7d8e4b819e313eda9d23519470bb95b4b7fb8b69
 G
 Anagram_Generator_UI.py,2\2\22519005d703f141bf0d684ee067557ed1cfb446
+H
+Morse_Code_Translator.py,3\a\3a6a9c208c8a18ea2e2d99ae0671073d04730f8b
+H
+Mad_Libs_Generator_UI.py,4\1\4188780595256e5dc7f5bd3a64f45a54eea957d7
