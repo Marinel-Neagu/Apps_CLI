@@ -69,3 +69,13 @@ H
 Morse_Code_Translator.py,3\a\3a6a9c208c8a18ea2e2d99ae0671073d04730f8b
 H
 Mad_Libs_Generator_UI.py,4\1\4188780595256e5dc7f5bd3a64f45a54eea957d7
+<
+ansi_code.py,d\0\d087f0ec1ac438f9a5f0e15db931d96b24adaeb6
+B
+Word_Counter_UI.py,6\d\6d03373ac5f3b56154a39dbd6c64b624cef09705
+K
+Random_Name_Generator_UI.py,d\4\d491b72a674a41a046ed1bbff958428f8450677b
+>
+Hangman_pic.py,4\8\487bc82af3a9088bfe906b84a336bf7f25b23af6
+B
+Hangman_Game_UI.py,9\6\96373ce26fd6cc979891a6201e2f930c177781ea

@@ -24,7 +24,7 @@ BOLD = '\033[1m'
 FAINT = '\033[2m'
 ITALIC = '\033[3m'  # Not widely supported
 UNDERLINE = '\033[4m'
-BLINK = '\033[5m'    # Slow blink, not widely supported
+BLINK = '\033[5m'  # Slow blink, not widely supported
 INVERT = '\033[7m'
 CONCEAL = '\033[8m'  # Hidden
 

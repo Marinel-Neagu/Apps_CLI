@@ -13,9 +13,9 @@ def dice():
                 result = random.randint(min_number, faces_dice)
                 print('You rolled:', result)
                 break
-
+        
         return result
-
+    
     except ValueError:
         print('Sorry man, you have to put a integer!!!')
     except AttributeError:
@@ -28,7 +28,7 @@ def new_game():
     while True:
         play_again = input('Do you want to play again!: ')
         if play_again == 'yes' or play_again == 'y':
-            main(prompt=True)
+            main(prompt = True)
         elif play_again == 'no' or play_again == 'n':
             print('I hoped it worked,you nerdy dude!')
             break
@@ -36,7 +36,7 @@ def new_game():
             print('Sorry man, just type_account yes or no: ')
 
 
-def main(prompt=False):
+def main(prompt = False):
     choice = None
     if not prompt:
         while True:
@@ -47,18 +47,18 @@ def main(prompt=False):
             elif choice == 'no' or choice == 'n':
                 print('Ok, you are a ... a nerd!')
                 break
-
+            
             else:
                 print('Sorry are a child?: ')
-
+    
     if prompt:
         return dice()
-
+    
     return choice.lower() in ['yes', 'y']
 
 
 user_name = input('Hi, tell me your name pls!: ').capitalize()
-print(f'Hello, {user_name}!What are you doing?', end=' ')
+print(f'Hello, {user_name}!What are you doing?', end = ' ')
 
 if __name__ == '__main__':
     if main():

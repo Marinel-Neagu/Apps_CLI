@@ -16,12 +16,14 @@ def hello():
 
 
 def title():
-    print('''
-____ ____ ____ _  _      ___  ____ ___  ____ ____      ____ ____ _ ____ ____ ____ ____ ____
-|__/ |  | |    |_/       |__] |__| |__] |___ |__/      [__  |    | [__  [__  |  | |__/ [__  
-|  \ |__| |___ | \_ .    |    |  | |    |___ |  \ .    ___] |___ | ___] ___] |__| |  \ ___] 
-                    '                             '                                         
-''')
+    print(
+        '''
+        ____ ____ ____ _  _      ___  ____ ___  ____ ____      ____ ____ _ ____ ____ ____ ____ ____
+        |__/ |  | |    |_/       |__] |__| |__] |___ |__/      [__  |    | [__  [__  |  | |__/ [__
+        |  \ |__| |___ | \_ .    |    |  | |    |___ |  \ .    ___] |___ | ___] ___] |__| |  \ ___]
+                            '                             '
+        '''
+        )
 
 
 def rounds():
@@ -36,7 +38,7 @@ def rounds():
 def game():
     computer_score = 0
     player_score = 0
-
+    
     count = 1
     if hello():
         round = rounds()
@@ -51,54 +53,54 @@ def game():
                         print('You:', player)
                         print('Computer:', computer)
                         print("It's a tie!")
-
+                    
                     elif player == 'Rock':
                         if computer == 'Paper':
                             computer_score += 1
                             print('You:', player)
                             print('Computer:', computer)
                             print('You lost!')
-
+                        
                         if computer == 'Scissors':
                             player_score += 1
                             print('You:', player)
                             print('Computer:', computer)
                             print('You won!')
-
-
+                    
+                    
                     elif player == 'Paper':
                         if computer == 'Rock':
                             player_score += 1
                             print('You:', player)
                             print('Computer:', computer)
                             print('You won!')
-
+                        
                         if computer == 'Scissor':
                             computer_score += 1
                             print('You:', player)
                             print('Computer:', computer)
                             print('You lost!')
-
-
+                    
+                    
                     elif player == 'Scissors':
-
+                        
                         if computer == 'Paper':
                             player_score += 1
                             print('You:', player)
                             print('Computer:', computer)
                             print('You won!')
-
+                        
                         if computer == 'Rock':
                             computer_score += 1
                             print('You:', player)
                             print('Computer:', computer)
                             print('You lost!')
-
+            
             except ValueError:
                 print('You have to put just words! ')
                 break
             count += 1
-
+        
         else:
             print('**********************************************************************************')
             print('Game Over!')
@@ -110,7 +112,7 @@ def game():
 def new_game():
     play_again = input('Do you want to play again?: ').lower().strip()
     if play_again == 'y' or play_again == 'yes':
-
+        
         game()
     elif play_again == 'n' or play_again == 'no':
         print('Goodbye')

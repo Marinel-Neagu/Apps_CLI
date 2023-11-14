@@ -38,22 +38,22 @@ quote_list = quotes.splitlines()
 quote_dic = {}
 used_quotes = list()
 
-for key, value in enumerate(quote_list, start=1):
-	quote_dic[key] = value
+for key, value in enumerate(quote_list, start = 1):
+    quote_dic[key] = value
 
 valid_quotes = list(quote_dic.keys())
 
 while len(valid_quotes) > 0:
-	try:
-		enter = input('Please press enter to get a quote: ').strip().lower()
-		key_random = random.choice(valid_quotes)
-		if enter == '':
-			random_quote = quote_dic[key_random]
-			print('Here is your quote:', random_quote)
-			valid_quotes.remove(key_random)
-		elif enter == 'q' or enter == 'quit':
-			print('Goodbye!')
-			break
-	except IndexError:
-		print('Sorry this is all my quotes for today!')
-		break
+    try:
+        enter = input('Please press enter to get a quote: ').strip().lower()
+        key_random = random.choice(valid_quotes)
+        if enter == '':
+            random_quote = quote_dic[key_random]
+            print('Here is your quote:', random_quote)
+            valid_quotes.remove(key_random)
+        elif enter == 'q' or enter == 'quit':
+            print('Goodbye!')
+            break
+    except IndexError:
+        print('Sorry this is all my quotes for today!')
+        break
